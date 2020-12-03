@@ -6,7 +6,7 @@ POST http://localhost:3000/University/login
 Content-Type: application/json
 
 { 
-   "email":"john2322@yahoo.com",
+   "email":"joh@yahoo.com",
    "password":"1234"
 }
 
