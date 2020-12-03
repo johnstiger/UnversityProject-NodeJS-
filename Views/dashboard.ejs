@@ -134,6 +134,7 @@
                     </thead>
                     <tbody>
                         <%students.forEach(function(data){ %>
+                            <form action="/University/student" method="GET" >
                             <tr>
                                 <td>
                                     <%=data.firstname %>
@@ -162,6 +163,7 @@
                                 <td><button class="update"><i class="fas fa-edit"></i> Update</button></td>
                                 <td><button class="delete"><i class="fas fa-trash"></i> Delete</button></td>
                             </tr>
+                        </form>
                             <% }) %>
                     </tbody>
                 </table>

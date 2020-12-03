@@ -6,8 +6,8 @@ POST http://localhost:3000/University/login
 Content-Type: application/json
 
 { 
-   "email":"joh@yahoo.com",
-   "password":"1234"
+   "email":"admin@admin.com",
+   "password":"admin"
 }
 
 ### Register Route
