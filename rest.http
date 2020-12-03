@@ -1,0 +1,27 @@
+GET http://localhost:3000
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDcwMTI3NTksImV4cCI6MTYwNzAxMjc3NCwiYXVkIjoiNWZjOTA1ZmZmYzI1NmMwZTk0NmJhODczIiwiaXNzIjoiU291dGhhbXB0b24uY29tIn0.Dy-0TJ3Lz2cnASePnghEQqHbf3BWY1Ll0zI5GyGyJxU
+
+###Login Rooute
+POST http://localhost:3000/University/login
+Content-Type: application/json
+
+{ 
+   "email":"john2322@yahoo.com",
+   "password":"1234"
+}
+
+### Register Route
+POST http://localhost:3000/University/register
+Content-Type: application/json
+
+{ 
+    "username":"johndave",
+   "email":"joh@yahoo.com",
+   "password":"1234"
+
+}
+
+
+
+###Logout Route
+DELETE http://localhost:3000/University/logout

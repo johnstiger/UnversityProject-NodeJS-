@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNTwmAnnBXWoSfPss-rnSImn8FemiVYaZ8eQ&usqp=CAU" type="image/icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="stylesheets/content.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <title>SOUTHAMPTON UNIVERSITY</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="./Images/output-onlinepngtools.png" alt="">
+        </div>
+    </header>
+    <aside class="sidenav">
+        <center>
+            <div class="profile">
+                <img src="https://steamuserimages-a.akamaihd.net/ugc/876373332530779744/6B985A2ADDCAF38C22F0D85A0DFF94ADC6EE7CA9/" alt="profile">
+                <h4>Jonalyn Mobilla</h4>
+            </div>
+        </center>
+        <hr>
+        <nav>
+            <h5>GENERAL</h5>
+            <ul>
+                <li class="active"><a href="#dashboard"><i class="fas fa-desktop"></i> Dashboard</a></li>
+                <li><a href="#student"><i class="fas fa-users"></i> Students</a></li>
+                <li><a href="#faculty"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
+                <li><a href="#recognition"><i class="fas fa-trophy"></i> Recognitions</a></li>
+            </ul>
+            <div class="user">
+                <h5>USER</h5>
+                <li><a href="/University/logout"><i class="fas fa-sign-out-alt"></i>Log out</a></li>
+                <button onclick="toggle_mode()" class="btn-mode">Dark mode</button>
+            </div>
+        </nav>
+    </aside>
+    <br><br>
+    <main>
+        <!-- DASHBOARD -->
+        <div id="dashboard" class="content">
+            <i class="fas fa-bars"></i>
+            <h2>Dashboard</h2>
+            <hr>
+            <div class="main-content">
+                <div class="card-content">
+                    <h5>No. of Student <br><span>S.Y 2019-present</span></h5>
+                </div>
+                <div class="card-content">
+                    <h5>No. of students <br><span>S.Y 2018-2019</span></h5>
+                </div>
+                <div class="card-content">
+                    <h5>School revenue</h5>
+                </div>
+            </div>
+            <div>
+                <canvas id="bar-chart" width="800" height="450"></canvas>
+            </div>
+        </div>
+        <!-- STUDENTS -->
+        <div id="student" class="content">
+            <i class="fas fa-bars"></i>
+            <div class="head">
+                <h2>Students</h2>
+                <div class="add-btn">
+                    <button type="submit" name="btn-add" data-toggle="modal" data-target="#myModal"><i
+                            class="fas fa-user-plus"></i>ADD STUDENT</button>
+                </div>
+            </div>
+            <hr>
+            <div class="students-main-content">
+                <div class="student-main-content-searches">
+                    <form action="" method="post" class="student-main-content-form">
+                        <div class="form-col">
+                            <!-- <input type="text" name="search-by-course" placeholder="search by course"> -->
+                            <select name="select-course" id="course">
+                                <option value="">SELECT COURSE</option>
+                                <option value="">CCT</option>
+                                <option value="">BSIT</option>
+                                <option value="">BS Interior Design</option>
+                                <option value="">BSA</option>
+                                <option value="">BSBA Major in MM</option>
+                                <option value="">BSED</option>
+                                <option value="">BSCE</option>
+                                <option value="">AB Broadcasting</option>
+                                <option value="">BA</option>
+                                <option value="">BS Psychology</option>
+                            </select>
+                            <button type="submit">Search Student</button>
+                        </div>
+                        <div class="form-col">
+                            <input type="text" name="search-by-year" placeholder="search by year">
+                            <button type="submit">Search Student</button>
+                        </div>
+                        <div class="form-col">
+                            <input type="text" name="search-by-surname" placeholder="search by surname">
+                            <button type="submit">Search Student</button>
+                        </div>
+                        <div class="form-col">
+                            <!-- <input type="text" name="search-by-school-year" placeholder="search by school year"> -->
+                            <select name="select-school-year" id="school-year">
+                                <option value="">S.Y 2019-2020</option>
+                                <option value="">S.Y 2019-2018</option>
+                                <option value="">S.Y 2018-2017</option>
+                                <option value="">S.Y 2017-2016</option>
+                            </select>
+                            <button type="submit">Search Student</button>
+                        </div>
+                    </form>
+                </div>
+                <h5>List of all students</h5>
+                <table class="students-table">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Middle Name</th>
+                            <th>Age</th>
+                            <th>Address</th>
+                            <th>Contact No.</th>
+                            <th>Course</th>
+                            <th>Year</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%students.forEach(function(data){ %>
+                            <tr>
+                                <td>
+                                    <%=data.firstname %>
+                                </td>
+                                <td>
+                                    <%=data.lastname %>
+                                </td>
+                                <td>
+                                    <%=data.middlename %>
+                                </td>
+                                <td>
+                                    <%=data.age %>
+                                </td>
+                                <td>
+                                    <%=data.address %>
+                                </td>
+                                <td>
+                                    <%=data.contactnumber %>
+                                </td>
+                                <td>
+                                    <%=data.course %>
+                                </td>
+                                <td>
+                                    <%=data.year %>
+                                </td>
+                                <td><button class="update"><i class="fas fa-edit"></i> Update</button></td>
+                                <td><button class="delete"><i class="fas fa-trash"></i> Delete</button></td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- FACULTY -->
+        <div id="faculty" class="content">
+            <i class="fas fa-bars"></i>
+            <h2>Faculty</h2>
+            <hr>
+        </div>
+        <!-- RECOGNITION -->
+        <div id="recognition">
+            <i class="fas fa-bars"></i>
+            <h2>Recognitions</h2>
+            <hr>
+        </div>
+    </main>
+    <div class="container">
+        <div class="modal fade" id="myModal-2" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Register to access</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <i class="fas fa-user-circle text-center"></i>
+                        <label><i class="fas fa-user"></i> Username:</label>
+                        <input type="text" placeholder="Enter username" class="modal-body-form">
+                        <label><i class="fas fa-envelope"></i> Email:</label>
+                        <input type="text" placeholder="Enter email" class="modal-body-form">
+                        <label><i class="fas fa-key"></i> Password:</label>
+                        <input type="text" name="password" id="password" placeholder="Enter password" class="modal-body-form">
+                        <button type="submit" class="modal-body-form btn btn-primary">Register</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggle_mode() {
+            let element = document.body;
+            let text = document.getElementsByClassName('btn-mode');
+            element.classList.toggle('dark-mode');
+            if (text.innerHTML == 'Dark mode') {
+                text.innerHTML == 'Light Mode';
+            } else {
+                text.innerHTML == 'Dark Mode';
+            }
+        }
+    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="./js/content.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+
+<div class="main-content">
+    <div class="row">
+        <div class="filter">
+            <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Search for Job positions..." title="Type in a job position">
+            <button type="submit" class="searchButton"><i class="fa fa-search"></i></button>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-primary" id="applicants">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Applicants</h3>
+                    <div class="pull-right">
+                    </div>
+                </div>
+
+                <table class="table table-hover" id="dev-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Job Position</th>
+                            <th>Contact Number</th>
+                            <th>Highest Education Obtained</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%for(i=0 ; i < resume.length; i++) { %>
+                            <tr class="table table-striped">
+                                <td>
+                                    <%= resume[i].user.firstname + " " + resume[i].user.lastname  %>
+                                </td>
+                                <td>
+                                    <%= resume[i].job.jobTitle%>
+                                </td>
+                                <td>
+                                    <%= resume[i].contactNumber%>
+                                </td>
+                                <td>
+                                    <%= resume[i].highestEducation%>
+                                </td>
+                                <td>
+                                    <form action="/hire/<%=resume[i]._id %>" method="POST">
+                                        <button type="submit" class="btn btn-success">Employ</button>
+                                        <button type="submit" class="btn btn-danger">Remove</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        function filterTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("dev-table");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNTwmAnnBXWoSfPss-rnSImn8FemiVYaZ8eQ&usqp=CAU"
+        type="image/icon" />
+    <link rel="stylesheet" href="stylesheets/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <title>Southampton University</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="Images/output-onlinepngtools.png" alt="" />
+            <!-- <img src="https://www.jobs.ac.uk/enhanced/employer/university-of-southampton/images/top.jpg" alt=""> -->
+            <div class="account-get">
+                <button type="submit" name="Sign in" id="logout" data-toggle="modal" data-target="#myModal">
+                    Sign in
+                </button>
+                <button type="submit" name="Sign up" id="sign-up" data-toggle="modal" data-target="#myModal-2">
+                    Register
+                </button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="about-page">
+            <h2>Southampton University</h2>
+            <div id="about">
+                <p class="text-justify">
+                    The University of Southampton (abbreviated as Soton in post-nominal
+                    letters) is a research university in Southampton, England. The
+                    university's origins date back to the founding of the Hartley
+                    Institution in 1862. In 1902, the Institution developed into the
+                    Hartley University College, awarding degrees from the University of
+                    London. On 29 April 1952, the institution was granted full
+                    university status, allowing it to award its own degrees.
+                </p>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <img src="https://lh3.googleusercontent.com/proxy/DOZJ32wo39X36hr3NdIvebzNZECWXQV8oG3F9TJ_u7w4K3xRRdKoS6EMou2gRRd3I5Bu9hvpUdcFtMCVBs4laWm5jJ09f0k6Wil__3f2Azm-yPA6"
+                alt="">
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; Copyright 2020 | All Rights Reserved 2020</p>
+        </div>
+    </footer>
+    <div class="container">
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">SIGN IN FORM</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            &times;
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <i class="fas fa-user-circle text-center"></i>
+                        <form action="/University/login" method="POST">
+                        <label><i class="fas fa-user"></i> Username:</label>
+                        <input type="text" placeholder="Enter username" class="modal-body-form" name = "email"style="width: 100%;">
+                        <label><i class="fas fa-key"></i> Password:</label>
+                        <input type="password" name="password" id="password" placeholder="Enter password"
+                            class="modal-body-form" style="width: 100%;">
+                            <br>
+                     <button type="submit" class="modal-body-form btn btn-primary" style="width: 100%;">
+                            Sign in
+                        </button>
+                    </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">
+                            Done
+                        </button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="modal fade" id="myModal-2" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">REGISTER FORM:</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            &times;
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/University/register" method="POST">
+                    <center><i class="fas fa-user-circle text-center"></i></center>
+                        <br>
+                        <label><i class="fas fa-user"></i> Username:</label>
+                        <input type="text" placeholder="Enter username" class="modal-body-form" name="username" style="width: 100%;">
+                        <label><i class="fas fa-envelope"></i> Email:</label>
+                        <input type="text" placeholder="Enter email" class="modal-body-form" name="email" style="width: 100%;">
+                        <label><i class="fas fa-key"></i> Password:</label>
+                        <input type="password" name="password" id="password" placeholder="Enter password"
+                            class="modal-body-form" style="width: 100%;">
+                        <button type="submit" class="modal-body-form btn btn-primary" style="width: 100%;">
+                            Register
+                        </button>
+                    </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">
+                            Done
+                        </button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
