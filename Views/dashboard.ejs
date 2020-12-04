@@ -2,139 +2,140 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNTwmAnnBXWoSfPss-rnSImn8FemiVYaZ8eQ&usqp=CAU" type="image/icon">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="stylesheets/content.css">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNTwmAnnBXWoSfPss-rnSImn8FemiVYaZ8eQ&usqp=CAU" type="image/icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="/stylesheets/dashboard.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <title>SOUTHAMPTON UNIVERSITY</title>
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <img src="./Images/output-onlinepngtools.png" alt="">
+            <img src="/Images/output-onlinepngtools.png" alt="" />
+            <!-- <i class="fas fa-bars"></i> -->
         </div>
     </header>
-    <aside class="sidenav">
-        <center>
-            <div class="profile">
-                <img src="https://steamuserimages-a.akamaihd.net/ugc/876373332530779744/6B985A2ADDCAF38C22F0D85A0DFF94ADC6EE7CA9/" alt="profile">
-                <h4>Jonalyn Mobilla</h4>
-            </div>
-        </center>
-        <hr>
+    <aside class="sidenav" id="sidebar">
+        <!-- <button type="button" class="close-sidenav" data-dismiss="sidenav">
+      &times;
+    </button> -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <div class="profile">
+            <center>
+                <img src="https://steamuserimages-a.akamaihd.net/ugc/876373332530779744/6B985A2ADDCAF38C22F0D85A0DFF94ADC6EE7CA9/" alt="profile" />
+                <p class="name">Jonalyn Mobilla</p>
+            </center>
+        </div>
+        <hr />
         <nav>
-            <h5>GENERAL</h5>
+            <p class="general"><strong>GENERAL</strong></p>
             <ul>
-                <li class="active"><a href="#dashboard"><i class="fas fa-desktop"></i> Dashboard</a></li>
-                <li><a href="#student"><i class="fas fa-users"></i> Students</a></li>
-                <li><a href="#faculty"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
-                <li><a href="#recognition"><i class="fas fa-trophy"></i> Recognitions</a></li>
+                <li class="active">
+                    <a href="#dashboard"><i class="fas fa-desktop"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="#student"><i class="fas fa-users"></i> Students</a>
+                </li>
+                <li>
+                    <a href="#faculty"><i class="fas fa-chalkboard-teacher"></i> Faculty</a>
+                </li>
+                <li>
+                    <a href="#recognition"><i class="fas fa-trophy"></i> Recognitions</a>
+                </li>
             </ul>
             <div class="user">
-                <h5>USER</h5>
-                <li><a href="/University/logout"><i class="fas fa-sign-out-alt"></i>Log out</a></li>
-                <button onclick="toggle_mode()" class="btn-mode">Dark mode</button>
+                <p class="general"><strong>USER</strong></p>
+                <li>
+                    <a href="/University"><i class="fas fa-sign-out-alt"></i>Log out</a>
+                </li>
+                <button class="btn-mode btn">Dark mode</button>
             </div>
         </nav>
     </aside>
-    <br><br>
+    <br /><br />
     <main>
         <!-- DASHBOARD -->
         <div id="dashboard" class="content">
-            <i class="fas fa-bars"></i>
-            <h2>Dashboard</h2>
-            <hr>
+            <p class="content-name"><strong>Dashboard</strong></p>
+            <hr class="hr-content" />
             <div class="main-content">
-                <div class="card-content">
-                    <h5>No. of Student <br><span>S.Y 2019-present</span></h5>
-                </div>
-                <div class="card-content">
-                    <h5>No. of students <br><span>S.Y 2018-2019</span></h5>
-                </div>
-                <div class="card-content">
-                    <h5>School revenue</h5>
-                </div>
+              <div class="card-content">
+                <p class="card-content-name">
+                  <strong>No. of Student <br /><span>S.Y 2019-present</span></strong>
+                </p>
+              </div>
+              <div class="card-content">
+                <p class="card-content-name">
+                  <strong>No. of students <br /><span>S.Y 2018-2019</span></strong>
+                </p>
+              </div>
+              <div class="card-content">
+                <p class="card-content-name"><strong>School revenue</strong></p>
+              </div>
             </div>
             <div>
-                <canvas id="bar-chart" width="800" height="450"></canvas>
+              <canvas id="bar-chart" width="1000" height="350"></canvas>
             </div>
-        </div>
+          </div>
         <!-- STUDENTS -->
         <div id="student" class="content">
-            <i class="fas fa-bars"></i>
+            <!-- <i class="fas fa-bars"></i> -->
             <div class="head">
-                <h2>Students</h2>
+                <p class="content-name"><strong>Students</strong></p>
                 <div class="add-btn">
-                    <button type="submit" name="btn-add" data-toggle="modal" data-target="#myModal"><i
-                            class="fas fa-user-plus"></i>ADD STUDENT</button>
+                    <button type="submit" name="btn-add" data-toggle="modal" data-target="#myModal-1" class="btn-primary">
+                        <i class="fas fa-user-plus"></i>ADD STUDENT
+                    </button>
                 </div>
             </div>
-            <hr>
+            <hr class="hr-content" />
             <div class="students-main-content">
                 <div class="student-main-content-searches">
                     <form action="" method="post" class="student-main-content-form">
                         <div class="form-col">
-                            <!-- <input type="text" name="search-by-course" placeholder="search by course"> -->
-                            <select name="select-course" id="course">
-                                <option value="">SELECT COURSE</option>
-                                <option value="">CCT</option>
-                                <option value="">BSIT</option>
-                                <option value="">BS Interior Design</option>
-                                <option value="">BSA</option>
-                                <option value="">BSBA Major in MM</option>
-                                <option value="">BSED</option>
-                                <option value="">BSCE</option>
-                                <option value="">AB Broadcasting</option>
-                                <option value="">BA</option>
-                                <option value="">BS Psychology</option>
-                            </select>
-                            <button type="submit">Search Student</button>
+                            <input type="number" name="search-by-year" id="searchYear" onkeyup="filterYear()" placeholder="search by year" />
+                            <button class="btn btn-info">Search Student </button>
                         </div>
                         <div class="form-col">
-                            <input type="text" name="search-by-year" placeholder="search by year">
-                            <button type="submit">Search Student</button>
+                            <input type="text" name="search-by-surname" id="searchName" onkeyup="filterName()" placeholder="search by surname" />
+                            <button type="submit" class="btn btn-info">Search Student</button>
                         </div>
                         <div class="form-col">
-                            <input type="text" name="search-by-surname" placeholder="search by surname">
-                            <button type="submit">Search Student</button>
-                        </div>
-                        <div class="form-col">
-                            <!-- <input type="text" name="search-by-school-year" placeholder="search by school year"> -->
-                            <select name="select-school-year" id="school-year">
-                                <option value="">S.Y 2019-2020</option>
-                                <option value="">S.Y 2019-2018</option>
-                                <option value="">S.Y 2018-2017</option>
-                                <option value="">S.Y 2017-2016</option>
-                            </select>
-                            <button type="submit">Search Student</button>
+                            <input type="text" name="search-by-school-year" placeholder="search by school year" id="searchSchool" onkeyup="filterSchool()">
+
+                            <button type="submit" class="btn btn-info">Search Student</button>
                         </div>
                     </form>
                 </div>
-                <h5>List of all students</h5>
-                <table class="students-table">
+
+                <table class="students-table" id="studentTable">
+                    <div class="table-head">
+                        <p class="list-name-table"><strong>List of all Students</strong></p>
+                        <button class="btn" id="sortStudent" onclick="sortStudent()">Sort</i></button>
+                    </div>
                     <thead>
                         <tr>
                             <th>First Name</th>
                             <th>Last Name</th>
-                            <th>Middle Name</th>
                             <th>Age</th>
+                            <th>Gender</th>
                             <th>Address</th>
-                            <th>Contact No.</th>
+                            <th>Email</th>
                             <th>Course</th>
-                            <th>Year</th>
+                            <th>Year Level</th>
+                            <th>School-Year</th>
                             <th>Update</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
                         <%students.forEach(function(data){ %>
-                            <form action="/University/student" method="GET" >
+                            <!-- <form action="/getstudent/<%=data._id%>" method="get"> -->
                             <tr>
                                 <td>
                                     <%=data.firstname %>
@@ -143,164 +144,620 @@
                                     <%=data.lastname %>
                                 </td>
                                 <td>
-                                    <%=data.middlename %>
+                                    <%=data.age %>
                                 </td>
                                 <td>
-                                    <%=data.age %>
+                                    <%=data.gender %>
                                 </td>
                                 <td>
                                     <%=data.address %>
                                 </td>
                                 <td>
-                                    <%=data.contactnumber %>
+                                    <%=data.email%>
                                 </td>
                                 <td>
                                     <%=data.course %>
                                 </td>
                                 <td>
-                                    <%=data.year %>
+                                    <%=data.yearlevel %>
                                 </td>
-                                <td><button class="update"><i class="fas fa-edit"></i> Update</button></td>
-                                <td><button class="delete"><i class="fas fa-trash"></i> Delete</button></td>
-                            </tr>
-                        </form>
-                            <% }) %>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <!-- FACULTY -->
-        <div id="faculty" class="content">
-            <i class="fas fa-bars"></i>
-            <h2>Faculty</h2>
-            <hr>
-        </div>
-        <!-- RECOGNITION -->
-        <div id="recognition">
-            <i class="fas fa-bars"></i>
-            <h2>Recognitions</h2>
-            <hr>
-        </div>
-    </main>
-    <div class="container">
-        <div class="modal fade" id="myModal-2" role="dialog">
-            <div class="modal-dialog">
+                                <td>
+                                    <%=data.schoolyear %>
+                                </td>
+                                <td>
+                                    <input type="text" hidden value="<%=data._id %>" name="id">
+                                    <!-- <a href="./getstudent/<%=data._id%>" class="text-decoration: none;"> -->
+                                    <button class="update actions-button btn btn-info" data-toggle="modal" data-target="#myModal-<%=data._id%>" name="update_modal">
+                                    <i class="fas fa-edit"></i>Update
+                                </button></a>
+                                </td>
+                                <td>
+                                    <form action="/deleteStudent/<%=data._id %>" method="post">
+                                        <input type="text" hidden value="<%=data %>" name="id">
+                                        <button class="delete actions-button btn btn-danger" data-toggle="modal" data-target="#myModal-3">
+                                        <i class="fas fa-trash"></i>Delete</form>
+                            </td>
+                            <!-- </form> -->
+                        </tr>
 
+                        <!-- MODAL FOR UPDATE -->
+
+                        <div class="container">
+                            <div class="modal fade" id="myModal-<%=data._id%>" role="dialog">
+                                <div class="modal-dialog modal-lg">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">UPDATE STUDENT</h4>
+                                            <button type="button" class="close" data-dismiss="modal">
+                                                &times;
+                                            </button>
+            </div>
+            <form action="/updateStudent/<%=data._id%>" method="POST">
+                <div class="modal-body update">
+                    <!-- <i class="fas fa-user-circle text-center"></i> -->
+                    <div class="col-1 col-body">
+                        <div class="col-body-content">
+                            <label>First name:</label>
+                            <input type="text" value="<%=data.firstname %>" class="modal-body-form" name="firstname" />
+                        </div>
+                        <div class="col-body-content">
+                            <label>Last name:</label>
+                            <input type="text" value="<%=data.lastname %>" class="modal-body-form" name="lastname" />
+                        </div>
+                        <div class="col-body-content">
+                            <label>Age:</label>
+                            <input type="text" name="age" value="<%=data.age %>" class="modal-body-form" />
+                        </div>
+                    </div>
+                    <div class="col-2 col-body">
+                        <div class="col-body-content">
+                            <label>Gender:</label>
+                            <select name="gender" id="gender" class="modal-body-form">
+                                <option hidden value="<%=data.gender %>"><%=data.gender %></option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                             </select>
+                        </div>
+                        <div class="col-body-content">
+                            <label>Address:</label>
+                            <input type="text" name="address" value="<%=data.address %>" class="modal-body-form" />
+                        </div>
+                        <div class="col-body-content">
+                            <label>Email:</label>
+                            <input type="email" value="<%=data.email %>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="modal-body-form" name="email" />
+                        </div>
+                    </div>
+                    <div class="col-3 col-body">
+                        <div class="col-body-content">
+                            <label>Course:</label>
+                            <select name="course" id="course" class="modal-body-form">
+                                <option value="<%=data.course %>"><%=data.course %></option>
+                                <option value="CCT">CCT</option>
+                                <option value="BSIT">BSIT</option>
+                                <option value="BS Interior Design">BS Interior Design
+                                </option>
+                                <option value="BSA">BSA</option>
+                                <option value="BSBA Major in MM">BSBA Major in MM</option>
+                                <option value="BSED">BSED</option>
+                                <option value="BSCE">BSCE</option>
+                                <option value="AB Broadcasting">AB Broadcasting</option>
+                                <option value="BA">BA</option>
+                                <option value="BS Psychology">BS Psychology</option>
+                            </select>
+                        </div>
+                        <div class="col-body-content">
+                            <label>Year-Level:</label>
+                            <select name="yearlevel" id="year" class="modal-body-form">
+                                <option value="<%=data.yearlevel %>"><%=data.yearlevel %> </option>
+                                <option value="1st year">1st year</option>
+                                <option value="2nd year">2nd year</option>
+                                <option value="3rd year">3rd year</option>
+                                <option value="4th year">4th year</option>
+                            </select>
+                        </div>
+                        <div class="col-body-content">
+                            <label>School-Year:</label>
+                            <select name="schoolyear" id="sy" class="modal-body-form">
+                                <option value="<%=data.schoolyear %>"><%=data.schoolyear %></option>
+                                <option value="2019-2020">2019-2020</option>
+                                <option value="2018-2019">2018-2019</option>
+                                <option value="2017-2018">2017-2018</option>
+                                <option value="2016-2017">2016-2017</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" value="Update" class="btn btn-primary">
+                    <!-- <button type="submit" class="btn btn-primary" data-dismiss="modal">Update</button> -->
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                </div>
+            </form>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+        <% }) %>
+            </tbody>
+            </table>
+            </div>
+            </div>
+            <!-- FACULTY -->
+            <div id="faculty" class="content">
+                <div id="student" class="content">
+                    <div class="head">
+                        <!-- <i class="fas fa-bars"></i> -->
+                        <p class="content-name"><strong>Faculty</strong></p>
+                        <div class="add-btn">
+                            <button type="submit" name="btn-add" data-toggle="modal" data-target="#myModal-1-2" class="btn-primary">
+                            <i class="fas fa-user-plus"></i>ADD INSTRUCTOR
+                        </button>
+                        </div>
+                    </div>
+                    <hr class="hr-content" />
+                    <div class="students-main-content">
+                        <div class="student-main-content-searches">
+                            <form action="" method="post" class="student-main-content-form">
+                                <div class="form-col">
+                                    <input type="text" name="search-by-course" placeholder="search by course" id="teacherCourse" onkeyup="filterTeacherCourse()">
+                                    <!-- <select name="course" id="course" class="modal-body-form">
+                                        <option value="Select course">Select course</option>
+                                        <option value="CCT">CCT</option>
+                                        <option value="BSIT">BSIT</option>
+                                        <option value="BS Interior Design">BS Interior Design</option>
+                                        <option value="BSA">BSA</option>
+                                        <option value="BSBA Major in MM">BSBA Major in MM</option>
+                                        <option value="BSED">BSED</option>
+                                        <option value="BSCE">BSCE</option>
+                                        <option value="AB Broadcasting">AB Broadcasting</option>
+                                        <option value="BA">BA</option>
+                                        <option value="BS Psychology">BS Psychology</option>
+                                      </select> -->
+                                    <button type="submit" class="btn btn-info">Search Instructor</button>
+                                </div>
+                                <div class="form-col">
+                                    <input type="text" name="search-by-year" placeholder="search by surname" id="teacherName" onkeyup="filterTeacherName()" />
+                                    <button type="submit" class="btn btn-info">Search Instructor</button>
+                                </div>
+                                <div class="form-col">
+                                    <input type="text" name="search-by-surname" placeholder="search by year" id="teacherYear" onkeyup="filterTeacherYear()" />
+                                    <button type="submit" class="btn btn-info">Search Instructor</button>
+                                </div>
+                            </form>
+                        </div>
+                        <table class="students-table mw-100 auto" id="facultyTable">
+                            <div class="table-head">
+                                <p class="list-name-table"><strong>List of all Instructors</strong></p>
+                                <button class="btn" onclick="sortTeacher()">Sort</button>
+                            </div>
+                            <thead>
+                                <tr>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Age</th>
+                                    <th>Gender</th>
+                                    <th>Address</th>
+                                    <th>Email</th>
+                                    <th>Contact No.</th>
+                                    <th>Course</th>
+                                    <th>Year-Level</th>
+                                    <th>Update</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%teachers.forEach(function(i){ %>
+                                    <tr>
+                                        <td>
+                                            <%=i.firstname %>
+                                        </td>
+                                        <td>
+                                            <%=i.lastname %>
+                                        </td>
+                                        <td>
+                                            <%=i.age %>
+                                        </td>
+                                        <td>
+                                            <%=i.gender %>
+                                        </td>
+                                        <td>
+                                            <%=i.address %>
+                                        </td>
+                                        <td>
+                                            <%=i.email %>
+                                        </td>
+                                        <td>
+                                            <%=i.contact %>
+                                        </td>
+                                        <td>
+                                            <%=i.course %>
+                                        </td>
+                                        <td>
+                                            <%=i.yearlevel %>
+                                        </td>
+                                        <td>
+                                            <input type="text" hidden value="<%=i._id %>" name="id">
+                                            <button class="update actions-button btn btn-info" data-toggle="modal" data-target="#myModal-<%=i._id%>" name="update_modal">
+                                        <i class="fas fa-edit"></i>Update
+                                    </button></a>
+                                        </td>
+                                        <td>
+                                            <form action="/deleteTeacher/<%=i._id%>" method="post">
+                                                <input type="text" hidden value="<%=i %>" name="id">
+                                                <button class="delete actions-button btn btn-danger" data-toggle="modal" data-target="#myModal-3">
+                                            <i class="fas fa-trash"></i>Delete
+                                    </form>
+                                </td>
+                            </tr>
+                            <!-- Faculty Update -->
+                            <div class="container">
+                                <div class="modal fade" id="myModal-<%=i._id%>" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">UPDATE STUDENT</h4>
+                                                <button type="button" class="close" data-dismiss="modal">
+                                                    &times;
+                                                </button>
+                    </div>
+                    <form action="/updateStudent/<%=i._id%>" method="POST">
+                        <div class="modal-body update">
+                            <!-- <i class="fas fa-user-circle text-center"></i> -->
+                            <div class="col-1 col-body">
+                                <div class="col-body-content">
+                                    <label>First name:</label>
+                                    <input type="text" value="<%=i.firstname %>" class="modal-body-form" name="firstname" />
+                                </div>
+                                <div class="col-body-content">
+                                    <label>Last name:</label>
+                                    <input type="text" value="<%=i.lastname %>" class="modal-body-form" name="lastname" />
+                                </div>
+                                <div class="col-body-content">
+                                    <label>Age:</label>
+                                    <input type="text" value="<%=i.age %>" class="modal-body-form" name="age" />
+                                </div>
+                            </div>
+                            <div class="col-2 col-body">
+                                <div class="col-body-content">
+                                    <label>Gender:</label>
+                                    <select name="gender" id="gender" class="modal-body-form">
+                                                                <option hidden value="<%=i.gender %>"><%=i.gender %>
+                                                                </option>
+                                                                <option value="Male">Male</option>
+                                                                <option value="Female">Female</option>
+                                                            </select>
+                                </div>
+                                <div class="col-body-content">
+                                    <label>Address:</label>
+                                    <input type="text" value="<%=i.address %>" class="modal-body-form" name="address" />
+                                </div>
+                                <div class="col-body-content">
+                                    <label>Email:</label>
+                                    <input type="email" value="<%=i.email %>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="modal-body-form" name="email" />
+                                </div>
+                            </div>
+                            <div class="col-3 col-body">
+                                <div class="col-body-content">
+                                    <label>Contact No.:</label>
+                                    <input type="tel" value="<%=i.contact %>" pattern="[0]{1}[9]{1}[0-9]{9}" title='Phone Number should start at 09 and be 11 digits' class="modal-body-form" name="contact" />
+                                </div>
+                                <div class="col-body-content">
+                                    <label>Course:</label>
+                                    <select name="course" id="course" class="modal-body-form">
+                                                                <option value="<%=i.course %>"><%=i.course %></option>
+                                                                <option value="CCT">CCT</option>
+                                                                <option value="BSIT">BSIT</option>
+                                                                <option value="BS Interior Design">BS Interior Design
+                                                                </option>
+                                                                <option value="BSA">BSA</option>
+                                                                <option value="BSBA Major in MM">BSBA Major in MM
+                                                                </option>
+                                                                <option value="BSED">BSED</option>
+                                                                <option value="BSCE">BSCE</option>
+                                                                <option value="AB Broadcasting">AB Broadcasting</option>
+                                                                <option value="BA">BA</option>
+                                                                <option value="BS Psychology">BS Psychology</option>
+                                                            </select>
+                                </div>
+                                <div class="col-body-content">
+                                    <label>Year-Level:</label>
+                                    <select name="yearlevel" id="year" class="modal-body-form">
+                                                                <option value="<%=i.yearlevel %>"><%=i.yearlevel %>
+                                                                </option>
+                                                                <option value="1st year">1st year</option>
+                                                                <option value="2nd year">2nd year</option>
+                                                                <option value="3rd year">3rd year</option>
+                                                                <option value="4th year">4th year</option>
+                                                            </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" value="Update" class="btn btn-primary">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+            </div>
+            <% }) %>
+                </tbody>
+                </table>
+                </div>
+                </div>
+                </div>
+                <!-- RECOGNITION -->
+                <div id="recognition">
+                    <!-- <i class="fas fa-bars"></i> -->
+                    <p class="content-name"><strong>Recognitions</strong></p>
+                    <hr />
+                    <div class="recognition-content">
+                        <div class="content-award-img">
+                            <img src="https://www.findaphd.com/bespoke-pages/custom-pages/bpid1158/img2017127560.jpg" alt="" />
+                            <h2>RANKINGS</h2>
+                            <div class="awards-content">
+                                <img src="https://cdn.southampton.ac.uk/assets/imported/transforms/content-block/ImageWithText_Image/8C199E34176A49BBA85CE59D6C7F7D62/SundayTimes(2).jpg_SIA_JPG_fit_to_width_MEDIUM.jpg" alt="" />
+                                <div class="award-description">
+                                    <h4>Sunday Times 2021 rankings</h4>
+                                    <p>
+                                        We' re ranked 15th in The Times and The Sunday Times Good University Guide 2021, with 1st place for Physiotherapy and 14 more subjects in the top 10. </p>
+                                </div>
+                            </div>
+                            <div class="awards-content">
+                                <img src="https://cdn.southampton.ac.uk/assets/imported/transforms/content-block/ImageWithText_Image/945C07AB604A4902BEE0BEE62B457031/qs(2).jpg_SIA_JPG_fit_to_width_MEDIUM.jpg" alt="" />
+                                <div class="award-description">
+                                    <h4>QS World University Rankings</h4>
+                                    <p>
+                                        We're in the top 100 in the QS World University Rankings 2021, based on indicators such as research excellence and employability.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="awards-content">
+                                <img src="https://cdn.southampton.ac.uk/assets/imported/transforms/content-block/ImageWithText_Image/188E49C32689456191E4C3CF943F6609/TEF%20Silver%20logo%20update.jpg_SIA_JPG_fit_to_width_MEDIUM.jpg" alt="" />
+                                <div class="award-description">
+                                    <h4>Teaching Excellence Framework</h4>
+                                    <p>
+                                        We've been awarded Silver in the Teaching Excellence and Student Outcomes Framework (TEF) for our quality teaching and learning.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <aside>
+                            <h3>RECOGNITIONS</h3>
+                            <div class="side-content">
+                                <div class="side-content-award">
+                                    <i class="fas fa-trophy"></i>
+                                    <h4>TOP 15 UK UNIVERSITY</h4>
+                                </div>
+                                <hr style="width: 50%; border: 0.5px solid rgb(243, 238, 238)" />
+                                <div class="side-content-award">
+                                    <i class="fas fa-users"></i>
+                                    <h4>GLOBAL #1 BUSINESS INCUBATOR</h4>
+                                </div>
+                                <hr style="width: 50%; border: 0.5px solid rgb(243, 238, 238)" />
+                                <div class="side-content-award">
+                                    <i class="fas fa-microscope"></i>
+                                    <h4>RESEARCH INTENSITY: 8TH IN UK</h4>
+                                </div>
+                                <hr style="width: 50%; border: 0.5px solid rgb(243, 238, 238)" />
+                                <div class="side-content-award">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <h4>GLOBAL TOP 100 UNIVERSITY</h4>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+    </main>
+    <!-- MODAL FOR ADDING STUDENT -->
+    <div class="container">
+        <div class="modal fade" id="myModal-1" role="dialog">
+            <div class="modal-dialog modal-lg">
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Register to access</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">ADD STUDENT</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            &times;
+                        </button>
                     </div>
-                    <div class="modal-body">
-                        <i class="fas fa-user-circle text-center"></i>
-                        <label><i class="fas fa-user"></i> Username:</label>
-                        <input type="text" placeholder="Enter username" class="modal-body-form">
-                        <label><i class="fas fa-envelope"></i> Email:</label>
-                        <input type="text" placeholder="Enter email" class="modal-body-form">
-                        <label><i class="fas fa-key"></i> Password:</label>
-                        <input type="text" name="password" id="password" placeholder="Enter password" class="modal-body-form">
-                        <button type="submit" class="modal-body-form btn btn-primary">Register</button>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
-                    </div>
-                </div>
+                    <form action="/addstudent" method="POST">
+                        <div class="modal-body">
+                            <div class="col-1 col-body">
+                                <div class="col-body-content">
+                                    <label>Firstname:</label>
+                                    <input type="text" placeholder="Enter first name" name="firstname" class="modal-body-form" />
+                                </div>
+                                <div class="col-body-content">
+                                    <label>Lastname:</label>
+                                    <input type="text" placeholder="Enter last name" name="lastname" class="modal-body-form" />
+                                </div>
+                                <div class="col-body-content">
+                                    <label>Age:</label>
+                                    <input type="text" name="age" placeholder="Enter age" class="modal-body-form" />
+                                </div>
+                            </div>
+                            <div class="col-2 col-body">
 
+                                <div class="col-body-content">
+                                    <label>Gender:</label>
+                                    <select name="gender" id="gender" class="modal-body-form">
+                                        <option hidden value="">Select Gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </div>
+                                <div class="col-body-content">
+                                    <label>Address:</label>
+                                    <input type="text" placeholder="Enter address" name="address" class="modal-body-form" />
+                                </div>
+                                <div class="col-body-content">
+                                    <label>Email:</label>
+                                    <input type="email" placeholder="Enter email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" class="modal-body-form" />
+                                </div>
+                            </div>
+                            <div class="col-3 col-body">
+                                <div class="col-body-content">
+                                    <label>Course:</label>
+                                    <select name="course" id="course" class="modal-body-form">
+                                        <option value="">Select course</option>
+                                        <option value="CCT">CCT</option>
+                                        <option value="BSIT">BSIT</option>
+                                        <option value="BS Interior Design">BS Interior Design</option>
+                                        <option value="BSA">BSA</option>
+                                        <option value="BSBA Major in MM">BSBA Major in MM</option>
+                                        <option value="BSED">BSED</option>
+                                        <option value="BSCE">BSCE</option>
+                                        <option value="AB Broadcasting">AB Broadcasting</option>
+                                        <option value="BA">BA</option>
+                                        <option value="BS Psychology">BS Psychology</option>
+                                    </select>
+                                </div>
+                                <div class="col-body-content">
+                                    <label>Year-Level:</label>
+                                    <select name="yearlevel" id="year" class="modal-body-form">
+                                        <option value="">Select year level</option>
+                                        <option value="1st year">1st year</option>
+                                        <option value="2nd year">2nd year</option>
+                                        <option value="3rd year">3rd year</option>
+                                        <option value="4th year">4th year</option>
+                                    </select>
+                                </div>
+                                <div class="col-body-content">
+                                    <label>School-Year:</label>
+                                    <select name="schoolyear" id="sy" class="modal-body-form">
+                                        <option value="">Select school year</option>
+                                        <option value="2019-2020">2019-2020</option>
+                                        <option value="2018-2019">2018-2019</option>
+                                        <option value="2017-2018">2017-2018</option>
+                                        <option value="2016-2017">2016-2017</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="form-group">
+                                <input type="submit" value="Add Student" class="btn btn-danger">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- MODAL FOR ADDING INSTRUCTOR -->
+    <div class="container">
+        <div class="modal fade" id="myModal-1-2" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">ADD INSTRUCTOR</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            &times;
+                        </button>
+                    </div>
+                    <form action="/addTeacher" method="post">
+                        <div class="modal-body">
+                            <div class="col-1 col-body">
+                                <div class="col-body-content">
+                                    <label>First name:</label>
+                                    <input type="text" placeholder="Enter first name" name="firstname" class="modal-body-form" />
+                                </div>
+                                <div class="col-body-content">
+                                    <label>Last name:</label>
+                                    <input type="text" placeholder="Enter last name" name="lastname" class="modal-body-form" />
+                                </div>
+                                <div class="col-body-content">
+                                    <label>Age:</label>
+                                    <input type="text" placeholder="Enter age" name="age" class="modal-body-form" />
+                                </div>
+                            </div>
+                            <div class="col-2 col-body">
+                                <div class="col-body-content">
+                                    <label>Gender:</label>
+                                    <select name="gender" id="gender" class="modal-body-form">
+                                        <option hidden value="">Select Gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </div>
+                                <div class="col-body-content">
+                                    <label>Address:</label>
+                                    <input type="text" placeholder="Enter address" name="address" class="modal-body-form" />
+                                </div>
+                                <div class="col-body-content">
+                                    <label>Email:</label>
+                                    <input type="email" placeholder="Enter email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" class="modal-body-form" />
+                                </div>
+                            </div>
+                            <div class="col-3 col-body">
+                                <div class="col-body-content">
+                                    <label>Contact:</label>
+                                    <input type="tel" pattern="[0]{1}[9]{1}[0-9]{9}" title='Phone Number should start at 09 and be 11 digits' placeholder="Enter contact number" name="contactnumber" class="modal-body-form" />
+                                </div>
+                                <div class="col-body-content">
+                                    <label>Course:</label>
+                                    <select name="course" id="course" class="modal-body-form">
+                                        <option value="">Select course</option>
+                                        <option value="CCT">CCT</option>
+                                        <option value="BSIT">BSIT</option>
+                                        <option value="BS Interior Design">BS Interior Design</option>
+                                        <option value="BSA">BSA</option>
+                                        <option value="BSBA Major in MM">BSBA Major in MM</option>
+                                        <option value="BSED">BSED</option>
+                                        <option value="BSCE">BSCE</option>
+                                        <option value="AB Broadcasting">AB Broadcasting</option>
+                                        <option value="BA">BA</option>
+                                        <option value="BS Psychology">BS Psychology</option>
+                                    </select>
+                                </div>
+                                <div class="col-body-content">
+                                    <label>Year-Level:</label>
+                                    <select name="yearlevel" id="year" class="modal-body-form">
+                                        <option hidden>Select year level</option>
+                                        <option value="1st year">1st year</option>
+                                        <option value="2nd year">2nd year</option>
+                                        <option value="3rd year">3rd year</option>
+                                        <option value="4th year">4th year</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" value="Add Instructor" class="btn btn-danger">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
     <script>
-        function toggle_mode() {
-            let element = document.body;
-            let text = document.getElementsByClassName('btn-mode');
-            element.classList.toggle('dark-mode');
-            if (text.innerHTML == 'Dark mode') {
-                text.innerHTML == 'Light Mode';
-            } else {
-                text.innerHTML == 'Dark Mode';
-            }
+        function openNav() {
+            document.getElementById("sidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidepanel").style.width = "0";
         }
     </script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-    <script src="./js/content.js"></script>
+    <script src="/js/content.js"></script>
+    <script src="/js/search.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>
-
-
-<div class="main-content">
-    <div class="row">
-        <div class="filter">
-            <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Search for Job positions..." title="Type in a job position">
-            <button type="submit" class="searchButton"><i class="fa fa-search"></i></button>
-        </div>
-        <div class="col-md-6">
-            <div class="panel panel-primary" id="applicants">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Applicants</h3>
-                    <div class="pull-right">
-                    </div>
-                </div>
-
-                <table class="table table-hover" id="dev-table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Job Position</th>
-                            <th>Contact Number</th>
-                            <th>Highest Education Obtained</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <%for(i=0 ; i < resume.length; i++) { %>
-                            <tr class="table table-striped">
-                                <td>
-                                    <%= resume[i].user.firstname + " " + resume[i].user.lastname  %>
-                                </td>
-                                <td>
-                                    <%= resume[i].job.jobTitle%>
-                                </td>
-                                <td>
-                                    <%= resume[i].contactNumber%>
-                                </td>
-                                <td>
-                                    <%= resume[i].highestEducation%>
-                                </td>
-                                <td>
-                                    <form action="/hire/<%=resume[i]._id %>" method="POST">
-                                        <button type="submit" class="btn btn-success">Employ</button>
-                                        <button type="submit" class="btn btn-danger">Remove</button>
-                                    </form>
-                                </td>
-                            </tr>
-                            <% } %>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <script>
-        function filterTable() {
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("dev-table");
-            tr = table.getElementsByTagName("tr");
-
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[1];
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
-                    }
-                }
-            }
-        }

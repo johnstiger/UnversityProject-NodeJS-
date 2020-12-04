@@ -4,7 +4,6 @@ const createError = require('http-errors');
 require('dotenv').config();
 require('./Services/initMongoDb');  
 const AuthRoute = require('./Routes/AuthRoute');
-const { verifyAccessToken} = require('./Services/jwt_helper');
 
 const app = express();
 
@@ -16,10 +15,6 @@ app.use(express.static('public'));
 
 app.use(morgan('dev'));
 const PORT = process.env.PORT || 3000;
-
-app.get('/', verifyAccessToken, async (req, res, next) => {
-    res.send("Hello from home route");
-});
 
 app.use('/University', AuthRoute);
 

@@ -5,9 +5,11 @@ const Faculty = require('../models/facultyModel')
 const parseRequestBody = require("../utils/parseRequestBody");
 const {authSchema} = require('../Services/validationSchema');
 const {signAccessToken, signRefreshToken} = require('../Services/jwt_helper');
+const { verifyAccessToken} = require('../Services/jwt_helper');
+
 
 module.exports = {
-    async homepage(req, res, next) {
+    verifyAccessToken, async homepage(req, res, next) {
         try {
             const teachers = await Faculty.find();
             const students = await Student.find();
@@ -250,6 +252,11 @@ module.exports = {
     },
     async login(req, res, next){
         try {
+            const teachers = await Faculty.find();
+            const students = await Student.find();
+            const student = await Student.findOne({ _id: req.params.id });
+            const teacher = await Faculty.findOne({ _id: req.params.id });
+            res.render('dashboard', { students: students, teachers: teachers, student: student, teacher: teacher });
             const result = await authSchema.validateAsync(req.body);
             
             if(result.email == 'admin@admin.com' && result.password == 'admin'){
