@@ -13,6 +13,5 @@ const facultySchema = Schema({
     yearlevel: { type: String, required: true }
 })
 
-const teacher = mongoose.model("Faculty", facultySchema)
-
-module.exports = teacher;
+const faculty = mongoose.model("Faculty", facultySchema);
+module.exports = faculty;

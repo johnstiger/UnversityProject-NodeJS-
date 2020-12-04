@@ -60,7 +60,10 @@ module.exports = {
 
             const newStudent = new Student(student)
             const all = await newStudent.save()
-
+            const accessToken = await signAccessToken(all.id);
+            const refreshToken = await signRefreshToken(all.id);
+            console.log({accessToken, refreshToken});
+            
             if (!all) {
                 return res.status(404).json({
                     error: "Error in adding student"
@@ -155,7 +158,6 @@ module.exports = {
             const teacher = {
                 firstname: req.body.firstname,
                 lastname: req.body.lastname,
-                middlename: req.body.middlename,
                 age: req.body.age,
                 gender: req.body.gender,
                 address: req.body.address,
@@ -164,9 +166,12 @@ module.exports = {
                 course: req.body.course,
                 yearlevel: req.body.yearlevel
             }
-            const newTeacher = new Faculty(teacher)
-            const all = await newTeacher.save()
+            const newTeacher = new Faculty(teacher);
+            const all = await newTeacher.save();
+            const accessToken = await signAccessToken(all.id);
+            const refreshToken = await signRefreshToken(all.id);
 
+            console.log({accessToken, refreshToken});
             if (!all) {
                 return res.status(404).json({
                     error: "Error in adding a teacher"
