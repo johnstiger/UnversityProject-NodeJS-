@@ -256,11 +256,11 @@ module.exports = {
             const students = await Student.find();
             const student = await Student.findOne({ _id: req.params.id });
             const teacher = await Faculty.findOne({ _id: req.params.id });
-            res.render('dashboard', { students: students, teachers: teachers, student: student, teacher: teacher });
+            
             const result = await authSchema.validateAsync(req.body);
             
             if(result.email == 'admin@admin.com' && result.password == 'admin'){
-                res.render('dashboard',{});
+                res.render('dashboard', { students: students, teachers: teachers, student: student, teacher: teacher });
             }else{
                 const user = await User.findOne({email:result.email});
     

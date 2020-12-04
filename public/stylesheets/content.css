@@ -3,8 +3,8 @@
     margin: 0;
 }
 .wrapper{
-    background: url('https://www.romseyadvertiser.co.uk/resources/images/10035524/');
-    background-size: cover auto;
+    background: url('https://dc-southampton.s3.amazonaws.com/images/blog/solent-university-spark-building.jpg?mtime=20190913133556&focal=none');
+    background-size: cover;
     margin: 0;
     height: 100vh;
     background-repeat: no-repeat;
