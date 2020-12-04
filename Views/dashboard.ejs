@@ -5,11 +5,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNTwmAnnBXWoSfPss-rnSImn8FemiVYaZ8eQ&usqp=CAU" type="image/icon" />
+    <link rel="shortcut icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNTwmAnnBXWoSfPss-rnSImn8FemiVYaZ8eQ&usqp=CAU"
+        type="image/icon" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <link rel="stylesheet" href="/stylesheets/dashboard.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <title>SOUTHAMPTON UNIVERSITY</title>
 </head>
 
@@ -27,7 +30,8 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <div class="profile">
             <center>
-                <img src="https://steamuserimages-a.akamaihd.net/ugc/876373332530779744/6B985A2ADDCAF38C22F0D85A0DFF94ADC6EE7CA9/" alt="profile" />
+                <img src="https://steamuserimages-a.akamaihd.net/ugc/876373332530779744/6B985A2ADDCAF38C22F0D85A0DFF94ADC6EE7CA9/"
+                    alt="profile" />
                 <p class="name">Jonalyn Mobilla</p>
             </center>
         </div>
@@ -59,36 +63,41 @@
     </aside>
     <br /><br />
     <main>
+        <!--  -->
+        <!--  -->
         <!-- DASHBOARD -->
         <div id="dashboard" class="content">
             <p class="content-name"><strong>Dashboard</strong></p>
             <hr class="hr-content" />
             <div class="main-content">
-              <div class="card-content">
-                <p class="card-content-name">
-                  <strong>No. of Student <br /><span>S.Y 2019-present</span></strong>
-                </p>
-              </div>
-              <div class="card-content">
-                <p class="card-content-name">
-                  <strong>No. of students <br /><span>S.Y 2018-2019</span></strong>
-                </p>
-              </div>
-              <div class="card-content">
-                <p class="card-content-name"><strong>School revenue</strong></p>
-              </div>
+                <div class="card-content">
+                    <p class="card-content-name">
+                        <strong>No. of Student <br /><span>S.Y 2019-present</span></strong>
+                    </p>
+                </div>
+                <div class="card-content">
+                    <p class="card-content-name">
+                        <strong>No. of students <br /><span>S.Y 2018-2019</span></strong>
+                    </p>
+                </div>
+                <div class="card-content">
+                    <p class="card-content-name"><strong>School revenue</strong></p>
+                </div>
             </div>
             <div>
-              <canvas id="bar-chart" width="1000" height="350"></canvas>
+                <canvas id="bar-chart" width="1000" height="350"></canvas>
             </div>
-          </div>
+        </div>
+        <!--  -->
+        <!--  -->
         <!-- STUDENTS -->
         <div id="student" class="content">
             <!-- <i class="fas fa-bars"></i> -->
             <div class="head">
                 <p class="content-name"><strong>Students</strong></p>
                 <div class="add-btn">
-                    <button type="submit" name="btn-add" data-toggle="modal" data-target="#myModal-1" class="btn-primary">
+                    <button type="submit" name="btn-add" data-toggle="modal" data-target="#myModal-1"
+                        class="btn-primary">
                         <i class="fas fa-user-plus"></i>ADD STUDENT
                     </button>
                 </div>
@@ -98,21 +107,25 @@
                 <div class="student-main-content-searches">
                     <form action="" method="post" class="student-main-content-form">
                         <div class="form-col">
-                            <input type="number" name="search-by-year" id="searchYear" onkeyup="filterYear()" placeholder="search by year" />
+                            <input type="number" name="search-by-year" id="searchYear" onkeyup="filterYear()"
+                                placeholder="search by year" />
                             <button class="btn btn-info">Search Student </button>
                         </div>
                         <div class="form-col">
-                            <input type="text" name="search-by-surname" id="searchName" onkeyup="filterName()" placeholder="search by surname" />
+                            <input type="text" name="search-by-surname" id="searchName" onkeyup="filterName()"
+                                placeholder="search by surname" />
                             <button type="submit" class="btn btn-info">Search Student</button>
                         </div>
                         <div class="form-col">
-                            <input type="text" name="search-by-school-year" placeholder="search by school year" id="searchSchool" onkeyup="filterSchool()">
+                            <input type="text" name="search-by-school-year" placeholder="search by school year"
+                                id="searchSchool" onkeyup="filterSchool()">
 
                             <button type="submit" class="btn btn-info">Search Student</button>
                         </div>
                     </form>
                 </div>
-
+                <!--  -->
+                <!-- Student Table -->
                 <table class="students-table" id="studentTable">
                     <div class="table-head">
                         <p class="list-name-table"><strong>List of all Students</strong></p>
@@ -135,53 +148,82 @@
                     </thead>
                     <tbody>
                         <%students.forEach(function(data){ %>
-                            <!-- <form action="/getstudent/<%=data._id%>" method="get"> -->
-                            <tr>
-                                <td>
-                                    <%=data.firstname %>
-                                </td>
-                                <td>
-                                    <%=data.lastname %>
-                                </td>
-                                <td>
-                                    <%=data.age %>
-                                </td>
-                                <td>
-                                    <%=data.gender %>
-                                </td>
-                                <td>
-                                    <%=data.address %>
-                                </td>
-                                <td>
-                                    <%=data.email%>
-                                </td>
-                                <td>
-                                    <%=data.course %>
-                                </td>
-                                <td>
-                                    <%=data.yearlevel %>
-                                </td>
-                                <td>
-                                    <%=data.schoolyear %>
-                                </td>
-                                <td>
-                                    <input type="text" hidden value="<%=data._id %>" name="id">
-                                    <!-- <a href="./getstudent/<%=data._id%>" class="text-decoration: none;"> -->
-                                    <button class="update actions-button btn btn-info" data-toggle="modal" data-target="#myModal-<%=data._id%>" name="update_modal">
+                        <!-- <form action="/getstudent/<%=data._id%>" method="get"> -->
+                        <tr>
+                            <td>
+                                <%=data.firstname %>
+                            </td>
+                            <td>
+                                <%=data.lastname %>
+                            </td>
+                            <td>
+                                <%=data.age %>
+                            </td>
+                            <td>
+                                <%=data.gender %>
+                            </td>
+                            <td>
+                                <%=data.address %>
+                            </td>
+                            <td>
+                                <%=data.email%>
+                            </td>
+                            <td>
+                                <%=data.course %>
+                            </td>
+                            <td>
+                                <%=data.yearlevel %>
+                            </td>
+                            <td>
+                                <%=data.schoolyear %>
+                            </td>
+                            <td>
+                                <input type="text" hidden value="<%=data._id %>" name="id">
+                                <!-- <a href="./getstudent/<%=data._id%>" class="text-decoration: none;"> -->
+                                <button class="update actions-button btn btn-info" data-toggle="modal"
+                                    data-target="#myModal-<%=data._id%>" name="update_modal">
                                     <i class="fas fa-edit"></i>Update
                                 </button></a>
-                                </td>
-                                <td>
-                                    <form action="/University/deleteStudent/<%=data._id %>" method="post">
-                                        <input type="text" hidden value="<%=data %>" name="id">
-                                        <button class="delete actions-button btn btn-danger" data-toggle="modal" data-target="#myModal-3">
-                                        <i class="fas fa-trash"></i>Delete</form>
+                            </td>
+                            <td>
+                                    <input type="text" hidden value="<%= data %>" name="id">
+                                    <button class="delete actions-button btn btn-danger" data-toggle="modal"
+                                        data-target="#myModal-<%=data._id%>">
+                                        <i class="fas fa-trash"></i>Delete
                             </td>
                             <!-- </form> -->
                         </tr>
-
+                        <!--  -->
+                        <!--  -->
+                        <!-- MODAL FOR DELETE -->
+                        <div class="container">
+                            <div class="modal fade" id="myModal-<%=data._id%>" role="dialog">
+                                <div class="modal-dialog modal-lg">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">DELETE STUDENT</h4>
+                                            <button type="button" class="close" data-dismiss="modal">
+                                                &times;
+                                            </button>
+                                        </div>
+                                        <form action="/University/deleteStudent/<%=data._id%>" method="POST">
+                                            <div class="modal-body delete">
+                                                <h1>Are you sure you want to delete this student?</h1>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <input type="submit" value="Delete" class="btn btn-primary">
+                                                <!-- <button type="submit" class="btn btn-primary" data-dismiss="modal">Update</button> -->
+                                                <button type="button" class="btn btn-danger"
+                                                    data-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  -->
                         <!-- MODAL FOR UPDATE -->
-
                         <div class="container">
                             <div class="modal fade" id="myModal-<%=data._id%>" role="dialog">
                                 <div class="modal-dialog modal-lg">
@@ -192,118 +234,131 @@
                                             <button type="button" class="close" data-dismiss="modal">
                                                 &times;
                                             </button>
+                                        </div>
+                                        <form action="/University/updateStudent/<%=data._id%>" method="POST">
+                                            <div class="modal-body update">
+                                                <!-- <i class="fas fa-user-circle text-center"></i> -->
+                                                <div class="col-1 col-body">
+                                                    <div class="col-body-content">
+                                                        <label>First name:</label>
+                                                        <input type="text" value="<%=data.firstname %>"
+                                                            class="modal-body-form" name="firstname" />
+                                                    </div>
+                                                    <div class="col-body-content">
+                                                        <label>Last name:</label>
+                                                        <input type="text" value="<%=data.lastname %>"
+                                                            class="modal-body-form" name="lastname" />
+                                                    </div>
+                                                    <div class="col-body-content">
+                                                        <label>Age:</label>
+                                                        <input type="text" name="age" value="<%=data.age %>"
+                                                            class="modal-body-form" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-2 col-body">
+                                                    <div class="col-body-content">
+                                                        <label>Gender:</label>
+                                                        <select name="gender" id="gender" class="modal-body-form"
+                                                            required>
+                                                            <option hidden value="<%=data.gender %>"><%=data.gender %>
+                                                            </option>
+                                                            <option value="Male">Male</option>
+                                                            <option value="Female">Female</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-body-content">
+                                                        <label>Address:</label>
+                                                        <input type="text" name="address" value="<%=data.address %>"
+                                                            class="modal-body-form" />
+                                                    </div>
+                                                    <div class="col-body-content">
+                                                        <label>Email:</label>
+                                                        <input type="email" value="<%=data.email %>"
+                                                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                                            class="modal-body-form" name="email" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-3 col-body">
+                                                    <div class="col-body-content">
+                                                        <label>Course:</label>
+                                                        <select name="course" id="course" class="modal-body-form">
+                                                            <option value="<%=data.course %>"><%=data.course %></option>
+                                                            <option value="CCT">CCT</option>
+                                                            <option value="BSIT">BSIT</option>
+                                                            <option value="BS Interior Design">BS Interior Design
+                                                            </option>
+                                                            <option value="BSA">BSA</option>
+                                                            <option value="BSBA Major in MM">BSBA Major in MM</option>
+                                                            <option value="BSED">BSED</option>
+                                                            <option value="BSCE">BSCE</option>
+                                                            <option value="AB Broadcasting">AB Broadcasting</option>
+                                                            <option value="BA">BA</option>
+                                                            <option value="BS Psychology">BS Psychology</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-body-content">
+                                                        <label>Year-Level:</label>
+                                                        <select name="yearlevel" id="year" class="modal-body-form">
+                                                            <option value="<%=data.yearlevel %>"><%=data.yearlevel %>
+                                                            </option>
+                                                            <option value="1st year">1st year</option>
+                                                            <option value="2nd year">2nd year</option>
+                                                            <option value="3rd year">3rd year</option>
+                                                            <option value="4th year">4th year</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-body-content">
+                                                        <label>School-Year:</label>
+                                                        <select name="schoolyear" id="sy" class="modal-body-form">
+                                                            <option value="<%=data.schoolyear %>"><%=data.schoolyear %>
+                                                            </option>
+                                                            <option value="2019-2020">2019-2020</option>
+                                                            <option value="2018-2019">2018-2019</option>
+                                                            <option value="2017-2018">2017-2018</option>
+                                                            <option value="2016-2017">2016-2017</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <input type="submit" value="Update" class="btn btn-primary">
+                                                <!-- <button type="submit" class="btn btn-primary" data-dismiss="modal">Update</button> -->
+                                                <button type="button" class="btn btn-danger"
+                                                    data-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% }) %>
+                    </tbody>
+                </table>
             </div>
-            <form action="/updateStudent/<%=data._id%>" method="POST">
-                <div class="modal-body update">
-                    <!-- <i class="fas fa-user-circle text-center"></i> -->
-                    <div class="col-1 col-body">
-                        <div class="col-body-content">
-                            <label>First name:</label>
-                            <input type="text" value="<%=data.firstname %>" class="modal-body-form" name="firstname" />
-                        </div>
-                        <div class="col-body-content">
-                            <label>Last name:</label>
-                            <input type="text" value="<%=data.lastname %>" class="modal-body-form" name="lastname" />
-                        </div>
-                        <div class="col-body-content">
-                            <label>Age:</label>
-                            <input type="text" name="age" value="<%=data.age %>" class="modal-body-form" />
-                        </div>
-                    </div>
-                    <div class="col-2 col-body">
-                        <div class="col-body-content">
-                            <label>Gender:</label>
-                            <select name="gender" id="gender" class="modal-body-form">
-                                <option hidden value="<%=data.gender %>"><%=data.gender %></option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                             </select>
-                        </div>
-                        <div class="col-body-content">
-                            <label>Address:</label>
-                            <input type="text" name="address" value="<%=data.address %>" class="modal-body-form" />
-                        </div>
-                        <div class="col-body-content">
-                            <label>Email:</label>
-                            <input type="email" value="<%=data.email %>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="modal-body-form" name="email" />
-                        </div>
-                    </div>
-                    <div class="col-3 col-body">
-                        <div class="col-body-content">
-                            <label>Course:</label>
-                            <select name="course" id="course" class="modal-body-form">
-                                <option value="<%=data.course %>"><%=data.course %></option>
-                                <option value="CCT">CCT</option>
-                                <option value="BSIT">BSIT</option>
-                                <option value="BS Interior Design">BS Interior Design
-                                </option>
-                                <option value="BSA">BSA</option>
-                                <option value="BSBA Major in MM">BSBA Major in MM</option>
-                                <option value="BSED">BSED</option>
-                                <option value="BSCE">BSCE</option>
-                                <option value="AB Broadcasting">AB Broadcasting</option>
-                                <option value="BA">BA</option>
-                                <option value="BS Psychology">BS Psychology</option>
-                            </select>
-                        </div>
-                        <div class="col-body-content">
-                            <label>Year-Level:</label>
-                            <select name="yearlevel" id="year" class="modal-body-form">
-                                <option value="<%=data.yearlevel %>"><%=data.yearlevel %> </option>
-                                <option value="1st year">1st year</option>
-                                <option value="2nd year">2nd year</option>
-                                <option value="3rd year">3rd year</option>
-                                <option value="4th year">4th year</option>
-                            </select>
-                        </div>
-                        <div class="col-body-content">
-                            <label>School-Year:</label>
-                            <select name="schoolyear" id="sy" class="modal-body-form">
-                                <option value="<%=data.schoolyear %>"><%=data.schoolyear %></option>
-                                <option value="2019-2020">2019-2020</option>
-                                <option value="2018-2019">2018-2019</option>
-                                <option value="2017-2018">2017-2018</option>
-                                <option value="2016-2017">2016-2017</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <input type="submit" value="Update" class="btn btn-primary">
-                    <!-- <button type="submit" class="btn btn-primary" data-dismiss="modal">Update</button> -->
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                </div>
-            </form>
         </div>
-        </div>
-        </div>
-        </div>
-
-
-        <% }) %>
-            </tbody>
-            </table>
-            </div>
-            </div>
-            <!-- FACULTY -->
-            <div id="faculty" class="content">
-                <div id="student" class="content">
-                    <div class="head">
-                        <!-- <i class="fas fa-bars"></i> -->
-                        <p class="content-name"><strong>Faculty</strong></p>
-                        <div class="add-btn">
-                            <button type="submit" name="btn-add" data-toggle="modal" data-target="#myModal-1-2" class="btn-primary">
+        <!--  -->
+        <!--  -->
+        <!-- FACULTY -->
+        <div id="faculty" class="content">
+            <div id="student" class="content">
+                <div class="head">
+                    <!-- <i class="fas fa-bars"></i> -->
+                    <p class="content-name"><strong>Faculty</strong></p>
+                    <div class="add-btn">
+                        <button type="submit" name="btn-add" data-toggle="modal" data-target="#myModal-1-2"
+                            class="btn-primary">
                             <i class="fas fa-user-plus"></i>ADD INSTRUCTOR
                         </button>
-                        </div>
                     </div>
-                    <hr class="hr-content" />
-                    <div class="students-main-content">
-                        <div class="student-main-content-searches">
-                            <form action="" method="post" class="student-main-content-form">
-                                <div class="form-col">
-                                    <input type="text" name="search-by-course" placeholder="search by course" id="teacherCourse" onkeyup="filterTeacherCourse()">
-                                    <!-- <select name="course" id="course" class="modal-body-form">
+                </div>
+                <hr class="hr-content" />
+                <div class="students-main-content">
+                    <div class="student-main-content-searches">
+                        <form action="" method="post" class="student-main-content-form">
+                            <div class="form-col">
+                                <input type="text" name="search-by-course" placeholder="search by course"
+                                    id="teacherCourse" onkeyup="filterTeacherCourse()">
+                                <!-- <select name="course" id="course" class="modal-body-form">
                                         <option value="Select course">Select course</option>
                                         <option value="CCT">CCT</option>
                                         <option value="BSIT">BSIT</option>
@@ -316,82 +371,117 @@
                                         <option value="BA">BA</option>
                                         <option value="BS Psychology">BS Psychology</option>
                                       </select> -->
-                                    <button type="submit" class="btn btn-info">Search Instructor</button>
-                                </div>
-                                <div class="form-col">
-                                    <input type="text" name="search-by-year" placeholder="search by surname" id="teacherName" onkeyup="filterTeacherName()" />
-                                    <button type="submit" class="btn btn-info">Search Instructor</button>
-                                </div>
-                                <div class="form-col">
-                                    <input type="text" name="search-by-surname" placeholder="search by year" id="teacherYear" onkeyup="filterTeacherYear()" />
-                                    <button type="submit" class="btn btn-info">Search Instructor</button>
-                                </div>
-                            </form>
-                        </div>
-                        <table class="students-table mw-100 auto" id="facultyTable">
-                            <div class="table-head">
-                                <p class="list-name-table"><strong>List of all Instructors</strong></p>
-                                <button class="btn" onclick="sortTeacher()">Sort</button>
+                                <button type="submit" class="btn btn-info">Search Instructor</button>
                             </div>
-                            <thead>
-                                <tr>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Age</th>
-                                    <th>Gender</th>
-                                    <th>Address</th>
-                                    <th>Email</th>
-                                    <th>Contact No.</th>
-                                    <th>Course</th>
-                                    <th>Year-Level</th>
-                                    <th>Update</th>
-                                    <th>Delete</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <%teachers.forEach(function(i){ %>
-                                    <tr>
-                                        <td>
-                                            <%=i.firstname %>
-                                        </td>
-                                        <td>
-                                            <%=i.lastname %>
-                                        </td>
-                                        <td>
-                                            <%=i.age %>
-                                        </td>
-                                        <td>
-                                            <%=i.gender %>
-                                        </td>
-                                        <td>
-                                            <%=i.address %>
-                                        </td>
-                                        <td>
-                                            <%=i.email %>
-                                        </td>
-                                        <td>
-                                            <%=i.contact %>
-                                        </td>
-                                        <td>
-                                            <%=i.course %>
-                                        </td>
-                                        <td>
-                                            <%=i.yearlevel %>
-                                        </td>
-                                        <td>
-                                            <input type="text" hidden value="<%=i._id %>" name="id">
-                                            <button class="update actions-button btn btn-info" data-toggle="modal" data-target="#myModal-<%=i._id%>" name="update_modal">
+                            <div class="form-col">
+                                <input type="text" name="search-by-year" placeholder="search by surname"
+                                    id="teacherName" onkeyup="filterTeacherName()" />
+                                <button type="submit" class="btn btn-info">Search Instructor</button>
+                            </div>
+                            <div class="form-col">
+                                <input type="text" name="search-by-surname" placeholder="search by year"
+                                    id="teacherYear" onkeyup="filterTeacherYear()" />
+                                <button type="submit" class="btn btn-info">Search Instructor</button>
+                            </div>
+                        </form>
+                    </div>
+                    <table class="students-table mw-100 auto" id="facultyTable">
+                        <div class="table-head">
+                            <p class="list-name-table"><strong>List of all Instructors</strong></p>
+                            <button class="btn" onclick="sortTeacher()">Sort</button>
+                        </div>
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Age</th>
+                                <th>Gender</th>
+                                <th>Address</th>
+                                <th>Email</th>
+                                <th>Contact No.</th>
+                                <th>Course</th>
+                                <th>Year-Level</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%teachers.forEach(function(i){ %>
+                            <tr>
+                                <td>
+                                    <%=i.firstname %>
+                                </td>
+                                <td>
+                                    <%=i.lastname %>
+                                </td>
+                                <td>
+                                    <%=i.age %>
+                                </td>
+                                <td>
+                                    <%=i.gender %>
+                                </td>
+                                <td>
+                                    <%=i.address %>
+                                </td>
+                                <td>
+                                    <%=i.email %>
+                                </td>
+                                <td>
+                                    <%=i.contact %>
+                                </td>
+                                <td>
+                                    <%=i.course %>
+                                </td>
+                                <td>
+                                    <%=i.yearlevel %>
+                                </td>
+                                <td>
+                                    <input type="text" hidden value="<%=i._id %>" name="id">
+                                    <button class="update actions-button btn btn-info" data-toggle="modal"
+                                        data-target="#myModal-<%=i._id%>" name="update_modal">
                                         <i class="fas fa-edit"></i>Update
                                     </button></a>
-                                        </td>
-                                        <td>
-                                            <form action="/deleteTeacher/<%=i._id%>" method="post">
-                                                <input type="text" hidden value="<%=i %>" name="id">
-                                                <button class="delete actions-button btn btn-danger" data-toggle="modal" data-target="#myModal-3">
+                                </td>
+                                <td>
+                                    <form action="/deleteTeacher/<%=i._id%>" method="post">
+                                        <input type="text" hidden value="<%=i %>" name="id">
+                                        <button class="delete actions-button btn btn-danger" data-toggle="modal"
+                                            data-target="#myModal-<%=i._id%>">
                                             <i class="fas fa-trash"></i>Delete
                                     </form>
                                 </td>
                             </tr>
+                            <!--  -->
+                            <!--  -->
+                            <!-- Faculty Delete -->
+                            div class="container">
+                                <div class="modal fade" id="myModal-<%=i._id%>" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">DELETE TEACHER</h4>
+                                                <button type="button" class="close" data-dismiss="modal">
+                                                    &times;
+                                                </button>
+                                            </div>
+                                            <form action="/University/deleteTeacher/<%=i._id%>" method="POST">
+                                                <div class="modal-body update">
+                                                    <!-- <i class="fas fa-user-circle text-center"></i> -->
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <input type="submit" value="Update" class="btn btn-primary">
+                                                        <button type="button" class="btn btn-danger"
+                                                            data-dismiss="modal">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--  -->
+                            <!--  -->
                             <!-- Faculty Update -->
                             <div class="container">
                                 <div class="modal fade" id="myModal-<%=i._id%>" role="dialog">
@@ -399,55 +489,64 @@
                                         <!-- Modal content-->
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title">UPDATE STUDENT</h4>
+                                                <h4 class="modal-title">UPDATE TEACHER</h4>
                                                 <button type="button" class="close" data-dismiss="modal">
                                                     &times;
                                                 </button>
-                    </div>
-                    <form action="/updateStudent/<%=i._id%>" method="POST">
-                        <div class="modal-body update">
-                            <!-- <i class="fas fa-user-circle text-center"></i> -->
-                            <div class="col-1 col-body">
-                                <div class="col-body-content">
-                                    <label>First name:</label>
-                                    <input type="text" value="<%=i.firstname %>" class="modal-body-form" name="firstname" />
-                                </div>
-                                <div class="col-body-content">
-                                    <label>Last name:</label>
-                                    <input type="text" value="<%=i.lastname %>" class="modal-body-form" name="lastname" />
-                                </div>
-                                <div class="col-body-content">
-                                    <label>Age:</label>
-                                    <input type="text" value="<%=i.age %>" class="modal-body-form" name="age" />
-                                </div>
-                            </div>
-                            <div class="col-2 col-body">
-                                <div class="col-body-content">
-                                    <label>Gender:</label>
-                                    <select name="gender" id="gender" class="modal-body-form">
+                                            </div>
+                                            <form action="/University/updateTeacher/<%=i._id%>" method="POST">
+                                                <div class="modal-body update">
+                                                    <!-- <i class="fas fa-user-circle text-center"></i> -->
+                                                    <div class="col-1 col-body">
+                                                        <div class="col-body-content">
+                                                            <label>First name:</label>
+                                                            <input type="text" value="<%=i.firstname %>"
+                                                                class="modal-body-form" name="firstname" />
+                                                        </div>
+                                                        <div class="col-body-content">
+                                                            <label>Last name:</label>
+                                                            <input type="text" value="<%=i.lastname %>"
+                                                                class="modal-body-form" name="lastname" />
+                                                        </div>
+                                                        <div class="col-body-content">
+                                                            <label>Age:</label>
+                                                            <input type="text" value="<%=i.age %>"
+                                                                class="modal-body-form" name="age" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-2 col-body">
+                                                        <div class="col-body-content">
+                                                            <label>Gender:</label>
+                                                            <select name="gender" id="gender" class="modal-body-form">
                                                                 <option hidden value="<%=i.gender %>"><%=i.gender %>
                                                                 </option>
                                                                 <option value="Male">Male</option>
                                                                 <option value="Female">Female</option>
                                                             </select>
-                                </div>
-                                <div class="col-body-content">
-                                    <label>Address:</label>
-                                    <input type="text" value="<%=i.address %>" class="modal-body-form" name="address" />
-                                </div>
-                                <div class="col-body-content">
-                                    <label>Email:</label>
-                                    <input type="email" value="<%=i.email %>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="modal-body-form" name="email" />
-                                </div>
-                            </div>
-                            <div class="col-3 col-body">
-                                <div class="col-body-content">
-                                    <label>Contact No.:</label>
-                                    <input type="tel" value="<%=i.contact %>" pattern="[0]{1}[9]{1}[0-9]{9}" title='Phone Number should start at 09 and be 11 digits' class="modal-body-form" name="contact" />
-                                </div>
-                                <div class="col-body-content">
-                                    <label>Course:</label>
-                                    <select name="course" id="course" class="modal-body-form">
+                                                        </div>
+                                                        <div class="col-body-content">
+                                                            <label>Address:</label>
+                                                            <input type="text" value="<%=i.address %>"
+                                                                class="modal-body-form" name="address" />
+                                                        </div>
+                                                        <div class="col-body-content">
+                                                            <label>Email:</label>
+                                                            <input type="email" value="<%=i.email %>"
+                                                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                                                class="modal-body-form" name="email" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-3 col-body">
+                                                        <div class="col-body-content">
+                                                            <label>Contact No.:</label>
+                                                            <input type="tel" value="<%=i.contact %>"
+                                                                pattern="[0]{1}[9]{1}[0-9]{9}"
+                                                                title='Phone Number should start at 09 and be 11 digits'
+                                                                class="modal-body-form" name="contact" />
+                                                        </div>
+                                                        <div class="col-body-content">
+                                                            <label>Course:</label>
+                                                            <select name="course" id="course" class="modal-body-form">
                                                                 <option value="<%=i.course %>"><%=i.course %></option>
                                                                 <option value="CCT">CCT</option>
                                                                 <option value="BSIT">BSIT</option>
@@ -462,10 +561,10 @@
                                                                 <option value="BA">BA</option>
                                                                 <option value="BS Psychology">BS Psychology</option>
                                                             </select>
-                                </div>
-                                <div class="col-body-content">
-                                    <label>Year-Level:</label>
-                                    <select name="yearlevel" id="year" class="modal-body-form">
+                                                        </div>
+                                                        <div class="col-body-content">
+                                                            <label>Year-Level:</label>
+                                                            <select name="yearlevel" id="year" class="modal-body-form">
                                                                 <option value="<%=i.yearlevel %>"><%=i.yearlevel %>
                                                                 </option>
                                                                 <option value="1st year">1st year</option>
@@ -473,87 +572,98 @@
                                                                 <option value="3rd year">3rd year</option>
                                                                 <option value="4th year">4th year</option>
                                                             </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <input type="submit" value="Update" class="btn btn-primary">
+                                                    <button type="button" class="btn btn-danger"
+                                                        data-dismiss="modal">Cancel</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <input type="submit" value="Update" class="btn btn-primary">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                        </div>
-                    </form>
+                            <% }) %>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            </div>
-            </div>
-            <% }) %>
-                </tbody>
-                </table>
-                </div>
-                </div>
-                </div>
-                <!-- RECOGNITION -->
-                <div id="recognition">
-                    <!-- <i class="fas fa-bars"></i> -->
-                    <p class="content-name"><strong>Recognitions</strong></p>
-                    <hr />
-                    <div class="recognition-content">
-                        <div class="content-award-img">
-                            <img src="https://www.findaphd.com/bespoke-pages/custom-pages/bpid1158/img2017127560.jpg" alt="" />
-                            <h2>RANKINGS</h2>
-                            <div class="awards-content">
-                                <img src="https://cdn.southampton.ac.uk/assets/imported/transforms/content-block/ImageWithText_Image/8C199E34176A49BBA85CE59D6C7F7D62/SundayTimes(2).jpg_SIA_JPG_fit_to_width_MEDIUM.jpg" alt="" />
-                                <div class="award-description">
-                                    <h4>Sunday Times 2021 rankings</h4>
-                                    <p>
-                                        We' re ranked 15th in The Times and The Sunday Times Good University Guide 2021, with 1st place for Physiotherapy and 14 more subjects in the top 10. </p>
-                                </div>
-                            </div>
-                            <div class="awards-content">
-                                <img src="https://cdn.southampton.ac.uk/assets/imported/transforms/content-block/ImageWithText_Image/945C07AB604A4902BEE0BEE62B457031/qs(2).jpg_SIA_JPG_fit_to_width_MEDIUM.jpg" alt="" />
-                                <div class="award-description">
-                                    <h4>QS World University Rankings</h4>
-                                    <p>
-                                        We're in the top 100 in the QS World University Rankings 2021, based on indicators such as research excellence and employability.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="awards-content">
-                                <img src="https://cdn.southampton.ac.uk/assets/imported/transforms/content-block/ImageWithText_Image/188E49C32689456191E4C3CF943F6609/TEF%20Silver%20logo%20update.jpg_SIA_JPG_fit_to_width_MEDIUM.jpg" alt="" />
-                                <div class="award-description">
-                                    <h4>Teaching Excellence Framework</h4>
-                                    <p>
-                                        We've been awarded Silver in the Teaching Excellence and Student Outcomes Framework (TEF) for our quality teaching and learning.
-                                    </p>
-                                </div>
-                            </div>
+        </div>
+        <!--  -->
+        <!--  -->
+        <!-- RECOGNITION -->
+        <div id="recognition">
+            <!-- <i class="fas fa-bars"></i> -->
+            <p class="content-name"><strong>Recognitions</strong></p>
+            <hr />
+            <div class="recognition-content">
+                <div class="content-award-img">
+                    <img src="https://www.findaphd.com/bespoke-pages/custom-pages/bpid1158/img2017127560.jpg" alt="" />
+                    <h2>RANKINGS</h2>
+                    <div class="awards-content">
+                        <img src="https://cdn.southampton.ac.uk/assets/imported/transforms/content-block/ImageWithText_Image/8C199E34176A49BBA85CE59D6C7F7D62/SundayTimes(2).jpg_SIA_JPG_fit_to_width_MEDIUM.jpg"
+                            alt="" />
+                        <div class="award-description">
+                            <h4>Sunday Times 2021 rankings</h4>
+                            <p>
+                                We' re ranked 15th in The Times and The Sunday Times Good University Guide 2021, with
+                                1st place for Physiotherapy and 14 more subjects in the top 10. </p>
                         </div>
-                        <aside>
-                            <h3>RECOGNITIONS</h3>
-                            <div class="side-content">
-                                <div class="side-content-award">
-                                    <i class="fas fa-trophy"></i>
-                                    <h4>TOP 15 UK UNIVERSITY</h4>
-                                </div>
-                                <hr style="width: 50%; border: 0.5px solid rgb(243, 238, 238)" />
-                                <div class="side-content-award">
-                                    <i class="fas fa-users"></i>
-                                    <h4>GLOBAL #1 BUSINESS INCUBATOR</h4>
-                                </div>
-                                <hr style="width: 50%; border: 0.5px solid rgb(243, 238, 238)" />
-                                <div class="side-content-award">
-                                    <i class="fas fa-microscope"></i>
-                                    <h4>RESEARCH INTENSITY: 8TH IN UK</h4>
-                                </div>
-                                <hr style="width: 50%; border: 0.5px solid rgb(243, 238, 238)" />
-                                <div class="side-content-award">
-                                    <i class="fas fa-graduation-cap"></i>
-                                    <h4>GLOBAL TOP 100 UNIVERSITY</h4>
-                                </div>
-                            </div>
-                        </aside>
+                    </div>
+                    <div class="awards-content">
+                        <img src="https://cdn.southampton.ac.uk/assets/imported/transforms/content-block/ImageWithText_Image/945C07AB604A4902BEE0BEE62B457031/qs(2).jpg_SIA_JPG_fit_to_width_MEDIUM.jpg"
+                            alt="" />
+                        <div class="award-description">
+                            <h4>QS World University Rankings</h4>
+                            <p>
+                                We're in the top 100 in the QS World University Rankings 2021, based on indicators such
+                                as research excellence and employability.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="awards-content">
+                        <img src="https://cdn.southampton.ac.uk/assets/imported/transforms/content-block/ImageWithText_Image/188E49C32689456191E4C3CF943F6609/TEF%20Silver%20logo%20update.jpg_SIA_JPG_fit_to_width_MEDIUM.jpg"
+                            alt="" />
+                        <div class="award-description">
+                            <h4>Teaching Excellence Framework</h4>
+                            <p>
+                                We've been awarded Silver in the Teaching Excellence and Student Outcomes Framework
+                                (TEF) for our quality teaching and learning.
+                            </p>
+                        </div>
                     </div>
                 </div>
+                <aside>
+                    <h3>RECOGNITIONS</h3>
+                    <div class="side-content">
+                        <div class="side-content-award">
+                            <i class="fas fa-trophy"></i>
+                            <h4>TOP 15 UK UNIVERSITY</h4>
+                        </div>
+                        <hr style="width: 50%; border: 0.5px solid rgb(243, 238, 238)" />
+                        <div class="side-content-award">
+                            <i class="fas fa-users"></i>
+                            <h4>GLOBAL #1 BUSINESS INCUBATOR</h4>
+                        </div>
+                        <hr style="width: 50%; border: 0.5px solid rgb(243, 238, 238)" />
+                        <div class="side-content-award">
+                            <i class="fas fa-microscope"></i>
+                            <h4>RESEARCH INTENSITY: 8TH IN UK</h4>
+                        </div>
+                        <hr style="width: 50%; border: 0.5px solid rgb(243, 238, 238)" />
+                        <div class="side-content-award">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h4>GLOBAL TOP 100 UNIVERSITY</h4>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
     </main>
+    <!--  -->
+    <!--  -->
     <!-- MODAL FOR ADDING STUDENT -->
     <div class="container">
         <div class="modal fade" id="myModal-1" role="dialog">
@@ -571,22 +681,25 @@
                             <div class="col-1 col-body">
                                 <div class="col-body-content">
                                     <label>Firstname:</label>
-                                    <input type="text" placeholder="Enter first name" name="firstname" class="modal-body-form" required>
+                                    <input type="text" placeholder="Enter first name" name="firstname"
+                                        class="modal-body-form" required>
                                 </div>
                                 <div class="col-body-content">
                                     <label>Lastname:</label>
-                                    <input type="text" placeholder="Enter last name" name="lastname" class="modal-body-form" required/>
+                                    <input type="text" placeholder="Enter last name" name="lastname"
+                                        class="modal-body-form" required />
                                 </div>
                                 <div class="col-body-content">
                                     <label>Age:</label>
-                                    <input type="text" name="age" placeholder="Enter age" class="modal-body-form" required/>
+                                    <input type="text" name="age" placeholder="Enter age" class="modal-body-form"
+                                        required />
                                 </div>
                             </div>
                             <div class="col-2 col-body">
 
                                 <div class="col-body-content">
                                     <label>Gender:</label>
-                                    <select name="gender" id="gender" class="modal-body-form">
+                                    <select name="gender" id="gender" class="modal-body-form" required>
                                         <option hidden value="">Select Gender</option>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
@@ -594,11 +707,14 @@
                                 </div>
                                 <div class="col-body-content">
                                     <label>Address:</label>
-                                    <input type="text" placeholder="Enter address" name="address" class="modal-body-form" required/>
+                                    <input type="text" placeholder="Enter address" name="address"
+                                        class="modal-body-form" required />
                                 </div>
                                 <div class="col-body-content">
                                     <label>Email:</label>
-                                    <input type="email" placeholder="Enter email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" class="modal-body-form" required/>
+                                    <input type="email" placeholder="Enter email"
+                                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email"
+                                        class="modal-body-form" required />
                                 </div>
                             </div>
                             <div class="col-3 col-body">
@@ -652,7 +768,8 @@
             </div>
         </div>
     </div>
-
+    <!--  -->
+    <!--  -->
     <!-- MODAL FOR ADDING INSTRUCTOR -->
     <div class="container">
         <div class="modal fade" id="myModal-1-2" role="dialog">
@@ -670,15 +787,18 @@
                             <div class="col-1 col-body">
                                 <div class="col-body-content">
                                     <label>First name:</label>
-                                    <input type="text" placeholder="Enter first name" name="firstname" class="modal-body-form"  required/>
+                                    <input type="text" placeholder="Enter first name" name="firstname"
+                                        class="modal-body-form" required />
                                 </div>
                                 <div class="col-body-content">
                                     <label>Last name:</label>
-                                    <input type="text" placeholder="Enter last name" name="lastname" class="modal-body-form" required/>
+                                    <input type="text" placeholder="Enter last name" name="lastname"
+                                        class="modal-body-form" required />
                                 </div>
                                 <div class="col-body-content">
                                     <label>Age:</label>
-                                    <input type="text" placeholder="Enter age" name="age" class="modal-body-form" required/>
+                                    <input type="text" placeholder="Enter age" name="age" class="modal-body-form"
+                                        required />
                                 </div>
                             </div>
                             <div class="col-2 col-body">
@@ -692,17 +812,23 @@
                                 </div>
                                 <div class="col-body-content">
                                     <label>Address:</label>
-                                    <input type="text" placeholder="Enter address" name="address" class="modal-body-form" required/>
+                                    <input type="text" placeholder="Enter address" name="address"
+                                        class="modal-body-form" required />
                                 </div>
                                 <div class="col-body-content">
                                     <label>Email:</label>
-                                    <input type="email" placeholder="Enter email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" class="modal-body-form" required/>
+                                    <input type="email" placeholder="Enter email"
+                                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email"
+                                        class="modal-body-form" required />
                                 </div>
                             </div>
                             <div class="col-3 col-body">
                                 <div class="col-body-content">
                                     <label>Contact:</label>
-                                    <input type="tel" pattern="[0]{1}[9]{1}[0-9]{9}" title='Phone Number should start at 09 and be 11 digits' placeholder="Enter contact number" name="contactnumber" class="modal-body-form" required/>
+                                    <input type="tel" pattern="[0]{1}[9]{1}[0-9]{9}"
+                                        title='Phone Number should start at 09 and be 11 digits'
+                                        placeholder="Enter contact number" name="contactnumber" class="modal-body-form"
+                                        required />
                                 </div>
                                 <div class="col-body-content">
                                     <label>Course:</label>
@@ -756,8 +882,12 @@
     <script src="/js/content.js"></script>
     <script src="/js/search.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

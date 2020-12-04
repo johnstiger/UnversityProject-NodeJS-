@@ -11,13 +11,8 @@ const { verifyAccessToken} = require('../Services/jwt_helper');
 module.exports = {
     verifyAccessToken, async homepage(req, res, next) {
         try {
-            const teachers = await Faculty.find();
-            const students = await Student.find();
-            const student = await Student.findOne({ _id: req.params.id });
-            const teacher = await Faculty.findOne({ _id: req.params.id });
             console.log('Home Page');
-            res.render('index', { students: students, teachers: teachers, student: student, teacher: teacher });
-
+            res.render('index');
         } catch (error) {
             next(error);
         }
@@ -59,7 +54,7 @@ module.exports = {
                     error: "Error in adding student"
                 })
             }
-            res.redirect('/University');
+            res.redirect('back');
             console.log(req.body)
         } catch (error) {
             console.log(error);
@@ -92,7 +87,6 @@ module.exports = {
 
     async editStudent(req, res) {
         try {
-
             await Student.updateOne({ _id: req.params.id }, parseRequestBody(req.body), (error) => {
                 if (error) {
                     console.log(error);
@@ -101,7 +95,7 @@ module.exports = {
                     })
 
                 }
-                return res.redirect('/')
+                return res.redirect('/University')
             })
 
 
@@ -113,15 +107,17 @@ module.exports = {
             })
         }
     },
+
     async delStudent(req, res) {
         try {
             const result = await Student.deleteOne({ _id: req.params.id })
+
             if (!result) {
                 return res.status(400).json({
                     error: "error",
                 });
             }
-            res.redirect('/')
+            res.redirect('/University')
         } catch (error) {
             console.log(error);
             return res.status(404).json({
