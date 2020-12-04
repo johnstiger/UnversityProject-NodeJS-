@@ -59,7 +59,7 @@ module.exports = {
                     error: "Error in adding student"
                 })
             }
-            res.redirect('/#student')
+            res.redirect('/University');
             console.log(req.body)
         } catch (error) {
             console.log(error);

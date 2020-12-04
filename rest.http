@@ -24,4 +24,4 @@ Content-Type: application/json
 
 
 ###Logout Route
-DELETE http://localhost:3000/University/logout
+POST http://localhost:3000/

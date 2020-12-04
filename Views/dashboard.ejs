@@ -172,7 +172,7 @@
                                 </button></a>
                                 </td>
                                 <td>
-                                    <form action="/deleteStudent/<%=data._id %>" method="post">
+                                    <form action="/University/deleteStudent/<%=data._id %>" method="post">
                                         <input type="text" hidden value="<%=data %>" name="id">
                                         <button class="delete actions-button btn btn-danger" data-toggle="modal" data-target="#myModal-3">
                                         <i class="fas fa-trash"></i>Delete</form>
@@ -566,20 +566,20 @@
                             &times;
                         </button>
                     </div>
-                    <form action="/addstudent" method="POST">
+                    <form action="/University/addstudent" method="POST">
                         <div class="modal-body">
                             <div class="col-1 col-body">
                                 <div class="col-body-content">
                                     <label>Firstname:</label>
-                                    <input type="text" placeholder="Enter first name" name="firstname" class="modal-body-form" />
+                                    <input type="text" placeholder="Enter first name" name="firstname" class="modal-body-form" required>
                                 </div>
                                 <div class="col-body-content">
                                     <label>Lastname:</label>
-                                    <input type="text" placeholder="Enter last name" name="lastname" class="modal-body-form" />
+                                    <input type="text" placeholder="Enter last name" name="lastname" class="modal-body-form" required/>
                                 </div>
                                 <div class="col-body-content">
                                     <label>Age:</label>
-                                    <input type="text" name="age" placeholder="Enter age" class="modal-body-form" />
+                                    <input type="text" name="age" placeholder="Enter age" class="modal-body-form" required/>
                                 </div>
                             </div>
                             <div class="col-2 col-body">
@@ -594,17 +594,17 @@
                                 </div>
                                 <div class="col-body-content">
                                     <label>Address:</label>
-                                    <input type="text" placeholder="Enter address" name="address" class="modal-body-form" />
+                                    <input type="text" placeholder="Enter address" name="address" class="modal-body-form" required/>
                                 </div>
                                 <div class="col-body-content">
                                     <label>Email:</label>
-                                    <input type="email" placeholder="Enter email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" class="modal-body-form" />
+                                    <input type="email" placeholder="Enter email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" class="modal-body-form" required/>
                                 </div>
                             </div>
                             <div class="col-3 col-body">
                                 <div class="col-body-content">
                                     <label>Course:</label>
-                                    <select name="course" id="course" class="modal-body-form">
+                                    <select name="course" id="course" class="modal-body-form" required>
                                         <option value="">Select course</option>
                                         <option value="CCT">CCT</option>
                                         <option value="BSIT">BSIT</option>
@@ -620,7 +620,7 @@
                                 </div>
                                 <div class="col-body-content">
                                     <label>Year-Level:</label>
-                                    <select name="yearlevel" id="year" class="modal-body-form">
+                                    <select name="yearlevel" id="year" class="modal-body-form" required>
                                         <option value="">Select year level</option>
                                         <option value="1st year">1st year</option>
                                         <option value="2nd year">2nd year</option>
@@ -630,7 +630,7 @@
                                 </div>
                                 <div class="col-body-content">
                                     <label>School-Year:</label>
-                                    <select name="schoolyear" id="sy" class="modal-body-form">
+                                    <select name="schoolyear" id="sy" class="modal-body-form" required>
                                         <option value="">Select school year</option>
                                         <option value="2019-2020">2019-2020</option>
                                         <option value="2018-2019">2018-2019</option>
@@ -665,26 +665,26 @@
                             &times;
                         </button>
                     </div>
-                    <form action="/addTeacher" method="post">
+                    <form action="/University/addTeacher" method="post">
                         <div class="modal-body">
                             <div class="col-1 col-body">
                                 <div class="col-body-content">
                                     <label>First name:</label>
-                                    <input type="text" placeholder="Enter first name" name="firstname" class="modal-body-form" />
+                                    <input type="text" placeholder="Enter first name" name="firstname" class="modal-body-form"  required/>
                                 </div>
                                 <div class="col-body-content">
                                     <label>Last name:</label>
-                                    <input type="text" placeholder="Enter last name" name="lastname" class="modal-body-form" />
+                                    <input type="text" placeholder="Enter last name" name="lastname" class="modal-body-form" required/>
                                 </div>
                                 <div class="col-body-content">
                                     <label>Age:</label>
-                                    <input type="text" placeholder="Enter age" name="age" class="modal-body-form" />
+                                    <input type="text" placeholder="Enter age" name="age" class="modal-body-form" required/>
                                 </div>
                             </div>
                             <div class="col-2 col-body">
                                 <div class="col-body-content">
                                     <label>Gender:</label>
-                                    <select name="gender" id="gender" class="modal-body-form">
+                                    <select name="gender" id="gender" class="modal-body-form" required>
                                         <option hidden value="">Select Gender</option>
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
@@ -692,21 +692,21 @@
                                 </div>
                                 <div class="col-body-content">
                                     <label>Address:</label>
-                                    <input type="text" placeholder="Enter address" name="address" class="modal-body-form" />
+                                    <input type="text" placeholder="Enter address" name="address" class="modal-body-form" required/>
                                 </div>
                                 <div class="col-body-content">
                                     <label>Email:</label>
-                                    <input type="email" placeholder="Enter email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" class="modal-body-form" />
+                                    <input type="email" placeholder="Enter email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" class="modal-body-form" required/>
                                 </div>
                             </div>
                             <div class="col-3 col-body">
                                 <div class="col-body-content">
                                     <label>Contact:</label>
-                                    <input type="tel" pattern="[0]{1}[9]{1}[0-9]{9}" title='Phone Number should start at 09 and be 11 digits' placeholder="Enter contact number" name="contactnumber" class="modal-body-form" />
+                                    <input type="tel" pattern="[0]{1}[9]{1}[0-9]{9}" title='Phone Number should start at 09 and be 11 digits' placeholder="Enter contact number" name="contactnumber" class="modal-body-form" required/>
                                 </div>
                                 <div class="col-body-content">
                                     <label>Course:</label>
-                                    <select name="course" id="course" class="modal-body-form">
+                                    <select name="course" id="course" class="modal-body-form" required>
                                         <option value="">Select course</option>
                                         <option value="CCT">CCT</option>
                                         <option value="BSIT">BSIT</option>
@@ -722,7 +722,7 @@
                                 </div>
                                 <div class="col-body-content">
                                     <label>Year-Level:</label>
-                                    <select name="yearlevel" id="year" class="modal-body-form">
+                                    <select name="yearlevel" id="year" class="modal-body-form" required>
                                         <option hidden>Select year level</option>
                                         <option value="1st year">1st year</option>
                                         <option value="2nd year">2nd year</option>
