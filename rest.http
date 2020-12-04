@@ -24,4 +24,4 @@ Content-Type: application/json
 
 
 ###Logout Route
-POST http://localhost:3000/
+GET http://localhost:3000/University/Admin

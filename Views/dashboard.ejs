@@ -20,19 +20,15 @@
     <header>
         <div class="logo">
             <img src="/Images/output-onlinepngtools.png" alt="" />
-            <!-- <i class="fas fa-bars"></i> -->
         </div>
     </header>
     <aside class="sidenav" id="sidebar">
-        <!-- <button type="button" class="close-sidenav" data-dismiss="sidenav">
-      &times;
-    </button> -->
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         <div class="profile">
             <center>
                 <img src="https://steamuserimages-a.akamaihd.net/ugc/876373332530779744/6B985A2ADDCAF38C22F0D85A0DFF94ADC6EE7CA9/"
                     alt="profile" />
-                <p class="name">Jonalyn Mobilla</p>
+                <p class="name">Administrator</p>
             </center>
         </div>
         <hr />
@@ -92,7 +88,6 @@
         <!--  -->
         <!-- STUDENTS -->
         <div id="student" class="content">
-            <!-- <i class="fas fa-bars"></i> -->
             <div class="head">
                 <p class="content-name"><strong>Students</strong></p>
                 <div class="add-btn">
@@ -109,7 +104,7 @@
                         <div class="form-col">
                             <input type="number" name="search-by-year" id="searchYear" onkeyup="filterYear()"
                                 placeholder="search by year" />
-                            <button class="btn btn-info">Search Student </button>
+                            <button class="btn btn-info">Search Year Level</button>
                         </div>
                         <div class="form-col">
                             <input type="text" name="search-by-surname" id="searchName" onkeyup="filterName()"
@@ -120,7 +115,7 @@
                             <input type="text" name="search-by-school-year" placeholder="search by school year"
                                 id="searchSchool" onkeyup="filterSchool()">
 
-                            <button type="submit" class="btn btn-info">Search Student</button>
+                            <button type="submit" class="btn btn-info">Search School Year</button>
                         </div>
                     </form>
                 </div>
@@ -148,7 +143,6 @@
                     </thead>
                     <tbody>
                         <%students.forEach(function(data){ %>
-                        <!-- <form action="/getstudent/<%=data._id%>" method="get"> -->
                         <tr>
                             <td>
                                 <%=data.firstname %>
@@ -179,25 +173,23 @@
                             </td>
                             <td>
                                 <input type="text" hidden value="<%=data._id %>" name="id">
-                                <!-- <a href="./getstudent/<%=data._id%>" class="text-decoration: none;"> -->
                                 <button class="update actions-button btn btn-info" data-toggle="modal"
-                                    data-target="#myModal-<%=data._id%>" name="update_modal">
+                                    data-target="#update-<%=data._id%>" name="update_modal">
                                     <i class="fas fa-edit"></i>Update
                                 </button></a>
                             </td>
                             <td>
                                     <input type="text" hidden value="<%= data %>" name="id">
                                     <button class="delete actions-button btn btn-danger" data-toggle="modal"
-                                        data-target="#myModal-<%=data._id%>">
+                                        data-target="#delete-<%=data._id%>">
                                         <i class="fas fa-trash"></i>Delete
                             </td>
-                            <!-- </form> -->
                         </tr>
                         <!--  -->
                         <!--  -->
                         <!-- MODAL FOR DELETE -->
                         <div class="container">
-                            <div class="modal fade" id="myModal-<%=data._id%>" role="dialog">
+                            <div class="modal fade" id="delete-<%=data._id%>" role="dialog">
                                 <div class="modal-dialog modal-lg">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -213,7 +205,6 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <input type="submit" value="Delete" class="btn btn-primary">
-                                                <!-- <button type="submit" class="btn btn-primary" data-dismiss="modal">Update</button> -->
                                                 <button type="button" class="btn btn-danger"
                                                     data-dismiss="modal">Cancel</button>
                                             </div>
@@ -225,7 +216,7 @@
                         <!--  -->
                         <!-- MODAL FOR UPDATE -->
                         <div class="container">
-                            <div class="modal fade" id="myModal-<%=data._id%>" role="dialog">
+                            <div class="modal fade" id="update-<%=data._id%>" role="dialog">
                                 <div class="modal-dialog modal-lg">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -237,7 +228,6 @@
                                         </div>
                                         <form action="/University/updateStudent/<%=data._id%>" method="POST">
                                             <div class="modal-body update">
-                                                <!-- <i class="fas fa-user-circle text-center"></i> -->
                                                 <div class="col-1 col-body">
                                                     <div class="col-body-content">
                                                         <label>First name:</label>
@@ -322,7 +312,6 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <input type="submit" value="Update" class="btn btn-primary">
-                                                <!-- <button type="submit" class="btn btn-primary" data-dismiss="modal">Update</button> -->
                                                 <button type="button" class="btn btn-danger"
                                                     data-dismiss="modal">Cancel</button>
                                             </div>
@@ -342,7 +331,6 @@
         <div id="faculty" class="content">
             <div id="student" class="content">
                 <div class="head">
-                    <!-- <i class="fas fa-bars"></i> -->
                     <p class="content-name"><strong>Faculty</strong></p>
                     <div class="add-btn">
                         <button type="submit" name="btn-add" data-toggle="modal" data-target="#myModal-1-2"
@@ -358,20 +346,7 @@
                             <div class="form-col">
                                 <input type="text" name="search-by-course" placeholder="search by course"
                                     id="teacherCourse" onkeyup="filterTeacherCourse()">
-                                <!-- <select name="course" id="course" class="modal-body-form">
-                                        <option value="Select course">Select course</option>
-                                        <option value="CCT">CCT</option>
-                                        <option value="BSIT">BSIT</option>
-                                        <option value="BS Interior Design">BS Interior Design</option>
-                                        <option value="BSA">BSA</option>
-                                        <option value="BSBA Major in MM">BSBA Major in MM</option>
-                                        <option value="BSED">BSED</option>
-                                        <option value="BSCE">BSCE</option>
-                                        <option value="AB Broadcasting">AB Broadcasting</option>
-                                        <option value="BA">BA</option>
-                                        <option value="BS Psychology">BS Psychology</option>
-                                      </select> -->
-                                <button type="submit" class="btn btn-info">Search Instructor</button>
+                                <button type="submit" class="btn btn-info">Search Course</button>
                             </div>
                             <div class="form-col">
                                 <input type="text" name="search-by-year" placeholder="search by surname"
@@ -381,7 +356,7 @@
                             <div class="form-col">
                                 <input type="text" name="search-by-surname" placeholder="search by year"
                                     id="teacherYear" onkeyup="filterTeacherYear()" />
-                                <button type="submit" class="btn btn-info">Search Instructor</button>
+                                <button type="submit" class="btn btn-info">Search Year Level</button>
                             </div>
                         </form>
                     </div>
@@ -443,10 +418,9 @@
                                     </button></a>
                                 </td>
                                 <td>
-                                    <form action="/deleteTeacher/<%=i._id%>" method="post">
                                         <input type="text" hidden value="<%=i %>" name="id">
                                         <button class="delete actions-button btn btn-danger" data-toggle="modal"
-                                            data-target="#myModal-<%=i._id%>">
+                                            data-target="#Modal-<%=i._id%>">
                                             <i class="fas fa-trash"></i>Delete
                                     </form>
                                 </td>
@@ -454,8 +428,8 @@
                             <!--  -->
                             <!--  -->
                             <!-- Faculty Delete -->
-                            div class="container">
-                                <div class="modal fade" id="myModal-<%=i._id%>" role="dialog">
+                            <div class="container">
+                                <div class="modal fade" id="Modal-<%=i._id%>" role="dialog">
                                     <div class="modal-dialog modal-lg">
                                         <!-- Modal content-->
                                         <div class="modal-content">
@@ -467,10 +441,10 @@
                                             </div>
                                             <form action="/University/deleteTeacher/<%=i._id%>" method="POST">
                                                 <div class="modal-body update">
-                                                    <!-- <i class="fas fa-user-circle text-center"></i> -->
+                                                        <h1>Are you sure you want to delete this Instructor?</h1>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <input type="submit" value="Update" class="btn btn-primary">
+                                                        <input type="submit" value="Delete" class="btn btn-primary">
                                                         <button type="button" class="btn btn-danger"
                                                             data-dismiss="modal">Cancel</button>
                                                     </div>
@@ -496,7 +470,6 @@
                                             </div>
                                             <form action="/University/updateTeacher/<%=i._id%>" method="POST">
                                                 <div class="modal-body update">
-                                                    <!-- <i class="fas fa-user-circle text-center"></i> -->
                                                     <div class="col-1 col-body">
                                                         <div class="col-body-content">
                                                             <label>First name:</label>
@@ -595,7 +568,6 @@
         <!--  -->
         <!-- RECOGNITION -->
         <div id="recognition">
-            <!-- <i class="fas fa-bars"></i> -->
             <p class="content-name"><strong>Recognitions</strong></p>
             <hr />
             <div class="recognition-content">

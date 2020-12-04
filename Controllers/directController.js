@@ -17,6 +17,18 @@ module.exports = {
             next(error);
         }
     },
+    async Admin(req,res, next){
+        try {
+            const teachers = await Faculty.find();
+            const students = await Student.find();
+            const student = await Student.findOne({ _id: req.params.id });
+            const teacher = await Faculty.findOne({ _id: req.params.id });
+
+            res.render('dashboard', { students: students, teachers: teachers, student: student, teacher: teacher });
+        } catch (error) {
+            next(error)
+        }
+    },
     async getAllStudent(req, res) {
         try {
             const students = await Student.find();
@@ -54,7 +66,7 @@ module.exports = {
                     error: "Error in adding student"
                 })
             }
-            res.redirect('back');
+            res.redirect('/University/Admin');
             console.log(req.body)
         } catch (error) {
             console.log(error);
@@ -95,10 +107,8 @@ module.exports = {
                     })
 
                 }
-                return res.redirect('/University')
+                return res.redirect('/University/Admin')
             })
-
-
         } catch (error) {
             // console.log(req.body)
             console.log(error)
@@ -117,7 +127,7 @@ module.exports = {
                     error: "error",
                 });
             }
-            res.redirect('/University')
+            res.redirect('/University/Admin')
         } catch (error) {
             console.log(error);
             return res.status(404).json({
@@ -162,7 +172,7 @@ module.exports = {
                     error: "Error in adding a teacher"
                 })
             }
-            res.redirect('/')
+            res.redirect('/University/Admin')
             console.log(req.body);
         } catch (error) {
             console.log(error)
@@ -192,15 +202,17 @@ module.exports = {
     },
     async editTeacher(req, res) {
         try {
-            await Faculty.updateOne({ _id: req.params.id }, parseRequestBody(req.body), (teacher) => {
-                if (!teacher) {
+            await Faculty.updateOne({ _id: req.params.id }, parseRequestBody(req.body), (error) => {
+                if (error) {
+                    console.log(error);
                     return res.status(404).json({
-                        error: "Error in updating a teacher"
+                        error: error
                     })
                 }
-                return res.redirect('/')
+                return res.redirect('/University/Admin')
             })
         } catch (error) {
+            console.log(error)
             return res.status(404).json({
                 error: error
             })
@@ -214,7 +226,7 @@ module.exports = {
                     error: "error",
                 });
             }
-            res.redirect('/')
+            res.redirect('/University/Admin')
         } catch (error) {
             return res.status(404).json({
                 error: error
@@ -248,15 +260,10 @@ module.exports = {
     },
     async login(req, res, next){
         try {
-            const teachers = await Faculty.find();
-            const students = await Student.find();
-            const student = await Student.findOne({ _id: req.params.id });
-            const teacher = await Faculty.findOne({ _id: req.params.id });
-            
             const result = await authSchema.validateAsync(req.body);
             
             if(result.email == 'admin@admin.com' && result.password == 'admin'){
-                res.render('dashboard', { students: students, teachers: teachers, student: student, teacher: teacher });
+                res.redirect('/University/Admin')
             }else{
                 const user = await User.findOne({email:result.email});
     
