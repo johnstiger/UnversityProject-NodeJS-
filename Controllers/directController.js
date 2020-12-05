@@ -17,7 +17,7 @@ module.exports = {
             next(error);
         }
     },
-    async Admin(req,res, next){
+    verifyAccessToken, async Admin(req,res, next){
         try {
             const teachers = await Faculty.find();
             const students = await Student.find();
@@ -195,9 +195,6 @@ module.exports = {
                     error: "No teacher recorded with this id"
                 })
             }
-            // res.status(200).json({
-            //     teacher: teacher
-            // })
             res.render('content', { teacher: teacher })
         } catch (error) {
             return res.status(404).json({
