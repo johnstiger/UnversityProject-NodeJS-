@@ -23,8 +23,9 @@ module.exports = {
             const students = await Student.find();
             const student = await Student.findOne({ _id: req.params.id });
             const teacher = await Faculty.findOne({ _id: req.params.id });
-
-            res.render('dashboard', { students: students, teachers: teachers, student: student, teacher: teacher });
+            const countStudent = await Student.count();
+            const countFaculty = await Faculty.count();
+            res.render('dashboard', { students: students, teachers: teachers, student: student, teacher: teacher, countStudent:countStudent, countFaculty:countFaculty });
         } catch (error) {
             next(error)
         }
