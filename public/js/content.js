@@ -42,12 +42,14 @@ $(document).ready(() => {
         }
     });
     //CHARTS DASHBOARD
+    phil = document.getElementById("philStudent").innerHTML;
+    console.log(phil);
     new Chart(document.getElementById("bar-chart"), {
         type: "bar",
         data: {
-            labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+            labels: ["Africa", "Asia", "Europe", "Latin America", "Philippines"],
             datasets: [{
-                label: "Population (millions)",
+                label: "University of Southampton",
                 backgroundColor: [
                     "#3e95cd",
                     "#8e5ea2",
@@ -55,14 +57,14 @@ $(document).ready(() => {
                     "#e8c3b9",
                     "#c45850",
                 ],
-                data: [2478, 5267, 734, 784, 433],
+                data: [2478, 5267, 734, 784, phil],
             }, ],
         },
         options: {
             legend: { display: false },
             title: {
                 display: true,
-                text: "Predicted world population (millions) in 2050",
+                text: "Number of Students from University of Southampton Campuses all over the world",
             },
         },
     });
