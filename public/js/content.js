@@ -42,32 +42,77 @@ $(document).ready(() => {
         }
     });
     //CHARTS DASHBOARD
-    phil = document.getElementById("philStudent").innerHTML;
-    console.log(phil);
-    new Chart(document.getElementById("bar-chart"), {
-        type: "bar",
-        data: {
-            labels: ["Africa", "Asia", "Europe", "Latin America", "Philippines"],
-            datasets: [{
-                label: "University of Southampton",
-                backgroundColor: [
-                    "#3e95cd",
-                    "#8e5ea2",
-                    "#3cba9f",
-                    "#e8c3b9",
-                    "#c45850",
-                ],
-                data: [1478, 2267, 734, 784, phil],
-            }, ],
-        },
-        options: {
-            legend: { display: false },
-            title: {
-                display: true,
-                text: "Number of Students from University of Southampton Campuses all over the world",
-            },
-        },
-    });
+    $.ajax({
+        url: "/University/login",
+        type: "GET",
+        success: function(result) {
+            // Student Chart
+            var arrStudent = [
+                result.numberStudent["1st year"],
+                result.numberStudent["2nd year"],
+                result.numberStudent["3rd year"],
+                result.numberStudent["4th year"]
+            ]
+            new Chart(document.getElementById("studentbar-chart"), {
+                type: "bar",
+                data: {
+                    labels: ["1st Year", "2nd Year", "3rd Year", "4th Year"],
+                    includeZero: true,
+                    datasets: [{
+                        label: "University of Southampton",
+                        backgroundColor: [
+                            "#3e95cd",
+                            "#8e5ea2",
+                            "#3cba9f",
+                            "#e8c3b9",
+                            "#c45850",
+                        ],
+                        data: arrStudent,
+                    }, ],
+                },
+                options: {
+                    legend: { display: false },
+                    title: {
+                        display: true,
+                        text: "Number of Students from University of Southampton per school level",
+                    },
+                },
+            });
+            // Faculty Chart
+            var arrFaculty = [
+                result.numberFaculty["1st year"],
+                result.numberFaculty["2nd year"],
+                result.numberFaculty["3rd year"],
+                result.numberFaculty["4th year"]
+            ]
+            new Chart(document.getElementById("facultybar-chart"), {
+                type: "bar",
+                data: {
+                    labels: ["1st Year", "2nd Year", "3rd Year", "4th Year"],
+                    includeZero: true,
+                    datasets: [{
+                        label: "University of Southampton",
+                        backgroundColor: [
+                            "#3e95cd",
+                            "#8e5ea2",
+                            "#3cba9f",
+                            "#e8c3b9",
+                            "#c45850",
+                        ],
+                        data: arrFaculty,
+                    }, ],
+                },
+                options: {
+                    legend: { display: false },
+                    title: {
+                        display: true,
+                        text: "Number of Faculties from University of Southampton per school level",
+                    },
+                },
+            });
+
+        }
+    })
 });
 
 // sorting student table

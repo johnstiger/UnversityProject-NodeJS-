@@ -6,6 +6,7 @@ const parseRequestBody = require("../utils/parseRequestBody");
 const {authSchema} = require('../Services/validationSchema');
 const {signAccessToken, signRefreshToken} = require('../Services/jwt_helper');
 const { verifyAccessToken} = require('../Services/jwt_helper');
+const underscore = require('underscore');
 
 
 module.exports = {
@@ -25,7 +26,14 @@ module.exports = {
             const teacher = await Faculty.findOne({ _id: req.params.id });
             const countStudent = await Student.count();
             const countFaculty = await Faculty.count();
-            res.render('dashboard', { students: students, teachers: teachers, student: student, teacher: teacher, countStudent:countStudent, countFaculty:countFaculty });
+            res.render('dashboard', {
+                 students: students,
+                 teachers: teachers,
+                 student: student,
+                 teacher: teacher, 
+                 countStudent:countStudent, 
+                 countFaculty:countFaculty, 
+                });
         } catch (error) {
             next(error)
         }
@@ -93,7 +101,12 @@ module.exports = {
                     error: "No student recorded with this id"
                 })
             }
-            res.redirect({ student: student, students: students, teachers: teachers, teacher: teacher }, "/#student")
+            res.redirect({ 
+                student: student, 
+                students: students, 
+                teachers: teachers, 
+                teacher: teacher },
+                 "/#student")
         } catch (error) {
             return res.status(404).json({
                 error: error
@@ -109,7 +122,6 @@ module.exports = {
                     return res.status(404).json({
                         error: error
                     })
-
                 }
                 return res.redirect('/University/Admin')
             })
@@ -125,7 +137,6 @@ module.exports = {
     async delStudent(req, res) {
         try {
             const result = await Student.deleteOne({ _id: req.params.id })
-
             if (!result) {
                 return res.status(400).json({
                     error: "error",
@@ -171,7 +182,6 @@ module.exports = {
             const all = await newTeacher.save();
             const accessToken = await signAccessToken(all.id);
             const refreshToken = await signRefreshToken(all.id);
-
             console.log({accessToken, refreshToken});
             if (!all) {
                 return res.status(404).json({
@@ -190,7 +200,6 @@ module.exports = {
     async getTeacher(req, res) {
         try {
             const teacher = await teacherModel.findOne({ _id: req.params.id })
-
             if (!teacher || teacher.length == 0) {
                 return res.status(404).json({
                     error: "No teacher recorded with this id"
@@ -235,7 +244,6 @@ module.exports = {
                 error: error
             })
         }
-
     },
     async register(req,res,next){
         try{
@@ -253,7 +261,6 @@ module.exports = {
             const savedUser = await user.save();
             const accessToken = await signAccessToken(savedUser.id);
             const refreshToken = await signRefreshToken(savedUser.id);
-            
             console.log({accessToken, refreshToken});
             res.render('content', {username:newUser.username})
         }catch(error){
@@ -264,20 +271,15 @@ module.exports = {
     async login(req, res, next){
         try {
             const result = await authSchema.validateAsync(req.body);
-            
             if(result.email == 'admin@admin.com' && result.password == 'admin'){
                 res.redirect('/University/Admin')
             }else{
                 const user = await User.findOne({email:result.email});
-    
                 if(!user) throw createError.NotFound("User is not registered");
-    
                 const Match = await user.isValidPassword(result.password);
                 if(!Match)throw createError.Unauthorized('Username/password is not valid');
-            
                 const accessToken = await signAccessToken(user.id);
                 const refreshToken = await signRefreshToken(user.id);
-
                 console.log({accessToken, refreshToken});
                 res.render('content',{username:user.username})
             }
@@ -285,5 +287,20 @@ module.exports = {
             if(error.isJoi === true) return next(createError.BadRequest('Invalid Username/Password'));
             next(error);
         }
+    },
+    async dashboardRetrieveAnalytics(req, res) {
+        const getStudent = await Student.find();
+        const getFaculty = await Faculty.find();
+        const student = underscore.countBy(getStudent, function(numberStudent) {
+            return numberStudent.yearlevel;
+        });
+        const faculty = underscore.countBy(getFaculty, function(numberFaculty){
+            return numberFaculty.yearlevel;
+        });
+        console.log(faculty);
+        res.json({
+            numberStudent: student,
+            numberFaculty:faculty
+        })
     }
 }

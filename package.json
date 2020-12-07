@@ -7,7 +7,7 @@
     "start": "nodemon app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Precy Jane Roxas, Jonalyn Mobilla, John Dave Pacinio",
   "license": "ISC",
   "dependencies": {
     "@hapi/joi": "^17.1.1",
@@ -19,6 +19,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.2",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "underscore": "^1.12.0"
   }
 }

@@ -15,5 +15,5 @@ router.post('/updateTeacher/:id', allroutes.editTeacher)
 router.post('/deleteTeacher/:id', allroutes.delTeacher)
 router.post('/register', allroutes.register)
 router.post('/login', allroutes.login)
-
+router.get('/login', allroutes.dashboardRetrieveAnalytics)
 module.exports = router;
